@@ -41,19 +41,24 @@ const ImageBorderRadiusMap: Record<ImageBorderRadiusType, string> = {
 };
 
 interface ImageProps {
-  imageURl?: string;
-  imageWidth?: string;
-  imageHeight?: string;
-  imageBorderRadius?: string;
+  imageUrl?: string;
+  imagePath?: string;
+  image?: string;
+  imageWidth?: ImageWidthType;
+  imageHeight?: ImageHeightType;
+  imageBorderRadius?: ImageBorderRadiusType;
   imageAltText?: string;
+  imageAltTextMaxLength?: number;
 }
 
 const Image: React.FC<ImageProps> = ({
-  imageURl="https://static.vecteezy.com/system/resources/previews/008/296/267/non_2x/colorful-swirl-logo-design-concept-illustration-vector.jpg",
+  imageUrl="https://static.vecteezy.com/system/resources/previews/008/296/267/non_2x/colorful-swirl-logo-design-concept-illustration-vector.jpg",
+  imagePath="image.png",
   imageWidth="full",
   imageHeight="full",
   imageBorderRadius = "full",
-  imageAltText = "Iamge Not Found"
+  imageAltText = "Iamge Not Found",
+  imageAltTextMaxLength = 20,
 }) => {
     // Determine background and text color based on appearance
     const determineImageWidth = (): string => {
@@ -68,18 +73,24 @@ const Image: React.FC<ImageProps> = ({
         return ImageBorderRadiusMap[imageBorderRadius];
     };
 
-  const currentImageUrl = imageURl;
+  const currentImageUrl = imageUrl;
+  const currentImagePath = imagePath;
   const currentImageWidth = determineImageWidth();
   const currentImageHeight = determineImageHeight();
   const currentBorderRadius = determineImageBorderRadius();
-  const currentAltText = imageAltText;
+  const currentImageAltText = imageAltText;
+  const currentImageAltTextMAXLength = imageAltTextMaxLength;
 
   return (
-    <img src={currentImageUrl} alt={currentAltText} style={{
+    <img
+      src={currentImagePath?currentImagePath:currentImageUrl}
+      alt={currentImageAltText.length<=currentImageAltTextMAXLength?currentImageAltText:currentImageAltText.slice(0,currentImageAltTextMAXLength) + "..."}
+      style={{
         width: currentImageWidth,
         height: currentImageHeight,
         borderRadius: currentBorderRadius,
-    }}/>
+      }}
+    />
   );
 };
 

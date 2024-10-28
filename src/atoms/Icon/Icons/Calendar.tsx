@@ -1,6 +1,6 @@
-import { IconProps } from "./Icon.types";
+import { IconPropsType } from "../Icon";
 
-const CalendarIcon = (props: IconProps): JSX.Element => {
+const CalendarIcon = (props: IconPropsType): JSX.Element => {
   const { height, width, fill, align, stroke } = props;
   return (
     <svg
@@ -18,11 +18,15 @@ const CalendarIcon = (props: IconProps): JSX.Element => {
 };
 
 CalendarIcon.defaultProps = {
-  width: 48,
-  height: 48,
+  width: "48px",
+  height: "48px",
+  marginX: "0px",
+  marginY: "0px",
+  paddingX: "0px",
+  paddingY: "0px",
   fill: "black",
   align: "top",
   stroke: "black"
-} as IconProps;
+} as IconPropsType;
 
 export default CalendarIcon;
