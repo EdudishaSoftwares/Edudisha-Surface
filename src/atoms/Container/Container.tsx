@@ -3,11 +3,14 @@ import React from "react";
 type FlexDirectionType = "column" | "inherit" | "-moz-initial" | "initial" | "revert" | "unset" | "column-reverse" | "row" | "row-reverse" | undefined;
 type FlexWrapType = "nowrap" | "wrap" | "wrap-reverse" | "initial" | "inherit" | undefined;
 type PositionType = "relative" | "absolute" | undefined;
+type VisibilityType = "hidden" | "visible" | undefined;
 
 interface ContainerProps {
   width?: string;
   height?: string;
-  opacity?: string,
+  zIndex?: string;
+  opacity?: string;
+  visibility?: VisibilityType;
   marginLeft?: string;
   marginRight?: string;
   marginTop?: string;
@@ -26,7 +29,7 @@ interface ContainerProps {
   boxShadowBlur?: string;
   boxShadowSpread?: string;
   boxShadowOpacity?: string;
-  boxShadowInset?: boolean;
+  boxShadowInset?: string;
   backgroundColor?: string,
   backgroundImageUrl?: string,
   backgroundSize?: string,
@@ -62,7 +65,9 @@ interface ContainerProps {
 const Container: React.FC<ContainerProps> = ({
   width = "400px",
   height = "200px",
+  zIndex = "1",
   opacity= "1",
+  visibility= "visible",
   marginLeft = "10px",
   marginRight = "10px",
   marginTop = "10px",
@@ -80,7 +85,7 @@ const Container: React.FC<ContainerProps> = ({
   boxShadowColor = "#000000",
   boxShadowBlur = "20px",
   boxShadowSpread = "20px",
-  boxShadowInset = false,
+  boxShadowInset = "false",
   boxShadowOpacity = "ff",
   backgroundImageUrl = "https//www.codewithrandom.com/wp-content/uploads/2022/10/Number-Guessing-Game-using-JavaScript-3.png",
   backgroundColor = "brown",
@@ -116,7 +121,9 @@ const Container: React.FC<ContainerProps> = ({
 
   const currentWidth = width
   const currentHeight = height
+  const currentZIndex = zIndex
   const currentOpacity = opacity
+  const currentVisibility = visibility
   const currentMarginLeft = marginLeft
   const currentMarginRight = marginRight
   const currentMarginTop = marginTop
@@ -163,14 +170,17 @@ const Container: React.FC<ContainerProps> = ({
   const currentLeft= left
   const currentRight= right
   const currentTop= top
-  const currenBottom= bottom
+  const currentBottom= bottom
+
   return (
     <div
       onClick={onClick}
       style={{
         width: currentWidth,
         height: currentHeight,
+        zIndex: currentZIndex,
         opacity: currentOpacity,
+        visibility: currentVisibility,
         margin: `${currentMarginTop} ${currentMarginLeft} ${currentMarginBottom} ${currentMarginRight}`,
         padding: `${currentPaddingTop} ${currentPaddingLeft} ${currentPaddingBottom} ${currentPaddingRight}`,
         borderRadius: currentBorderRadius,
@@ -199,7 +209,7 @@ const Container: React.FC<ContainerProps> = ({
         left: currentLeft,
         right: currentRight,
         top: currentTop,
-        bottom: currenBottom,
+        bottom: currentBottom,
     }}>
       {children}
     </div>

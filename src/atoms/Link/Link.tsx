@@ -1,5 +1,7 @@
 import React from "react";
 
+type ReferrerPolicyType = "no-referrer" | "no-referrer-when-downgrade" | "origin" | "origin-when-cross-origin" | "same-origin" | "strict-origin-when-cross-origin" | undefined;
+
 // Mapping for the text color
 type ColorType = "primary" | "secondary" | "subtle" | "success" | "warning" | "failure" | "grey" | "violet";
 
@@ -69,6 +71,12 @@ interface TextProps {
   fontWeight?: FontWeightType;
   display?: string,
   width?: string,
+  href?:string;
+  download?: string,
+  ping?: string,
+  referrerPolicy?: ReferrerPolicyType,
+  rel?: string,
+  target?: string,
   children: React.ReactNode;
 }
 
@@ -82,6 +90,12 @@ const Text: React.FC<TextProps> = ({
   fontWeight= "regular",
   display= "inline-block",
   width= "300px",
+  href= "",
+  download= true,
+  ping= "none",
+  referrerPolicy= undefined,
+  rel= "none",
+  target= "blank",
   children,
 }) => {
 
@@ -96,8 +110,20 @@ const Text: React.FC<TextProps> = ({
   const currentTextDecoration = textDecoration;
   const currentDisplay = display;
   const currentWidth = width;
+  const currentHref = href;
+  const currentDownload =download
+  const currentPing =ping
+  const currentReferrerPolicy =referrerPolicy
+  const currentRel =rel
+  const currentTarget =target
   return (
-    <span
+    <a
+      href={currentHref}
+      download={currentDownload}
+      ping={currentPing}
+      referrerPolicy={currentReferrerPolicy}
+      rel={currentRel}
+      target={currentTarget}
       style={{
         color: currentFontColor,
         fontSize: FontSizeMap[fontSize],
@@ -110,7 +136,7 @@ const Text: React.FC<TextProps> = ({
       }}
     >
       {children}
-    </span>
+    </a>
   );
 };
 
