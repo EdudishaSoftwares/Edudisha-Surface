@@ -1,0 +1,15 @@
+@function spacing($size) {
+    @if $size == xs {
+        @return 0.25rem;
+    } @else if $size == sm {
+        @return 0.5rem;
+    } @else if $size == md {
+        @return 0.75rem;
+    } @else if $size == lg {
+        @return 1rem;
+    } @else if $size == xl {
+        @return 1.5rem;
+    }
+    
+    @return null;
+  }
