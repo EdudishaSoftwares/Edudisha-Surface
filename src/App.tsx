@@ -20,7 +20,7 @@ function App() {
     <>
       <div>
         <>COMPONENT LEFT</>
-        <DropDown size="s" data={data} maxWidth="sm" multiSelect={true}/>
+        <DropDown size="s" data={data} maxWidth="sm" multiSelect={true} />
         <>COMPONENT RIGHT</>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

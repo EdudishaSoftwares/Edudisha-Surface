@@ -1,7 +1,7 @@
 import React from "react";
 
 export interface WithAsProps<
-  As extends React.ElementType | string = React.ElementType
+  As extends React.ElementType | string = React.ElementType,
 > {
   as?: As;
   className?: string;

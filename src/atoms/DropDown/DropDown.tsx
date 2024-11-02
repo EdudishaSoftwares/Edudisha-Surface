@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 import DownArrow from "../icons/DownArrow";
 // Styles
 import classNames from "classnames/bind";
-import style from './DropDown.module.scss'
+import style from "./DropDown.module.scss";
 const cx = classNames.bind(style);
 // Types
 import {
@@ -16,7 +16,13 @@ import {
 } from "./types";
 
 const DropDown = (props: DropDownProps) => {
-  const { title = "", data, size = "m", maxWidth = 'md', multiSelect = false } = props;
+  const {
+    title = "",
+    data,
+    size = "m",
+    maxWidth = "md",
+    multiSelect = false,
+  } = props;
 
   // States
   const [openDropDown, setOpenDropDown] = React.useState(false);
@@ -45,19 +51,17 @@ const DropDown = (props: DropDownProps) => {
   // Handle visibility of drop down data
   const handleUpdateDropDownData = React.useCallback(
     (value: string, isChecked: boolean) => {
-
       const newData = dropDownData.map((el) => {
         if (el.value === value) {
           return { ...el, isChecked };
         } else {
-          if(multiSelect){
+          if (multiSelect) {
             return el;
-          }
-          else{
+          } else {
             return {
               ...el,
               isChecked: false,
-            }
+            };
           }
         }
       });
@@ -70,7 +74,7 @@ const DropDown = (props: DropDownProps) => {
   // Add drop down label in the resultant solution
   const addValue = React.useCallback(
     (newValue: string) => {
-      if(multiSelect) setResultValue([...resultValue, newValue]);
+      if (multiSelect) setResultValue([...resultValue, newValue]);
       else setResultValue([newValue]);
     },
     [dropDownData, resultValue]
@@ -93,22 +97,24 @@ const DropDown = (props: DropDownProps) => {
   };
 
   return (
-    <div className={cx('outer_dropdown')}>
+    <div className={cx("outer_dropdown")}>
       <Button onClick={toggleDropDown} size={size} appearence="primary">
-        <div className={cx('drop-down-button')}>
-          <div className={cx('content-title')}>
-            <span className={cx(`text-container`, `${classNameSize(maxWidth)}`)}>
+        <div className={cx("drop-down-button")}>
+          <div className={cx("content-title")}>
+            <span
+              className={cx(`text-container`, `${classNameSize(maxWidth)}`)}
+            >
               {!title && resultValue.length === 0 ? "Select" : title}
               {resultValue.length === 0 ? "" : resultValue.toString()}
             </span>
           </div>
-          <div className={cx('content-icon')}>
+          <div className={cx("content-icon")}>
             <DownArrow />
           </div>
         </div>
       </Button>
       {openDropDown && (
-        <div className={cx('drop-down-container')}>
+        <div className={cx("drop-down-container")}>
           {dropDownData.map((el, index) => (
             <DropDownItemAtom
               key={index}
@@ -142,18 +148,25 @@ const DropDownItemAtom = (props: DropDownItemProps) => {
   return (
     <div key={`checkpicker-${id}`}>
       <button
-        className={cx('checkpicker-container', data.isChecked ? "checkpicker-container-selected": "checkpicker-container-unselected")}
+        className={cx(
+          "checkpicker-container",
+          data.isChecked
+            ? "checkpicker-container-selected"
+            : "checkpicker-container-unselected"
+        )}
         onClick={handleClickPickerChange}
       >
-        {multiSelect && <label className={cx('checkpicker')}>
-          <input
-            type="checkbox"
-            checked={data.isChecked}
-            className={cx('checkpicker-input')}
-            onChange={() => {}}
-          />
-        </label>}
-        <span className={cx('checkpicker-label')}>{data.label}</span>
+        {multiSelect && (
+          <label className={cx("checkpicker")}>
+            <input
+              type="checkbox"
+              checked={data.isChecked}
+              className={cx("checkpicker-input")}
+              onChange={() => {}}
+            />
+          </label>
+        )}
+        <span className={cx("checkpicker-label")}>{data.label}</span>
       </button>
     </div>
   );
