@@ -8,6 +8,7 @@
     "build": "vite build",
     "start_stage": "env-cmd -f .env.stage npm run start",
     "build_stage": "env-cmd -f .env.stage npm run build",
+    "prettify-check": "npx prettier --check src/",
     "prettify": "npx prettier --write --ignore-unknown --cache --cache-location=node_modules/.cache/alfred_prettier_cached_file src/"
   },
   "dependencies": {
