@@ -78,7 +78,7 @@ interface ButtonProps {
   appearence?: AppearenceType;
   size?: ButtonSize;
   onClick?: () => void;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const Button: React.FC<ButtonProps> = ({
