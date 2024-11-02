@@ -11,7 +11,7 @@ function App() {
 
   for (let i = 0; i < 20; i++) {
     data.push({
-      label: `labeeeeeeeeeeeeeel${i}`,
+      label: `labeeeeeeeeeeeeeeel${i}`,
       value: `label${i}`,
     });
   }
@@ -20,7 +20,7 @@ function App() {
     <>
       <div>
         <>COMPONENT LEFT</>
-        <DropDown size="s" data={data} maxWidth="sm" />
+        <DropDown size="s" data={data} maxWidth="sm" multiSelect={false}/>
         <>COMPONENT RIGHT</>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

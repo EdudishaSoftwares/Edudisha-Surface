@@ -13,7 +13,7 @@ import {
 } from "./types";
 
 const DropDown = (props: DropDownProps) => {
-  const { title = "", data, size = "m", maxWidth = "md" } = props;
+  const { title = "", data, size = "m", maxWidth = 'md', multiSelect = false } = props;
 
   // States
   const [openDropDown, setOpenDropDown] = React.useState<boolean>(false);
@@ -46,11 +46,20 @@ const DropDown = (props: DropDownProps) => {
   // Handle visibility of drop down data
   const handleUpdateDropDownData = React.useCallback(
     (value: string, isChecked: boolean) => {
+
       const newData = dropDownData.map((el) => {
         if (el.value === value) {
           return { ...el, isChecked };
         } else {
-          return el;
+          if(multiSelect){
+            return el;
+          }
+          else{
+            return {
+              ...el,
+              isChecked: false,
+            }
+          }
         }
       });
 
@@ -62,7 +71,8 @@ const DropDown = (props: DropDownProps) => {
   // Add drop down label in the resultant solution
   const addValue = React.useCallback(
     (newValue: string) => {
-      setResultValue([...resultValue, newValue]);
+      if(multiSelect) setResultValue([...resultValue, newValue]);
+      else setResultValue([newValue]);
     },
     [dropDownData, resultValue]
   );
@@ -116,6 +126,7 @@ const DropDown = (props: DropDownProps) => {
               key={index}
               id={index}
               data={el}
+              multiSelect={multiSelect}
               handleChange={handleUpdateDropDownData}
               addValue={addValue}
               removeValue={removeValue}
@@ -128,7 +139,7 @@ const DropDown = (props: DropDownProps) => {
 };
 
 const DropDownItemAtom = (props: DropDownItemProps) => {
-  const { id, data, handleChange, addValue, removeValue } = props;
+  const { id, data, handleChange, addValue, removeValue, multiSelect } = props;
 
   // Handle toggle on click picker
   const handleClickPickerChange = React.useCallback(() => {
@@ -150,14 +161,14 @@ const DropDownItemAtom = (props: DropDownItemProps) => {
         }`}
         onClick={handleClickPickerChange}
       >
-        <label className="checkpicker">
+        {multiSelect && <label className="checkpicker">
           <input
             type="checkbox"
             checked={data.isChecked}
             className="checkpicker-input"
             onChange={() => {}}
           />
-        </label>
+        </label>}
         <span className="checkpicker-label">{data.label}</span>
       </button>
     </div>
