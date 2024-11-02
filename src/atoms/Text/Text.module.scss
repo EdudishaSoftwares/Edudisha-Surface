@@ -1,4 +1,5 @@
-@import '../../assets/colors';
+@use '../../assets/colors' as *; 
+
 // Text Component Styles
 .text {
     font-family: 'Times New Roman', Times, serif, 'Apple-System', Arial, Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'STXihei', sans-serif;
@@ -104,6 +105,7 @@
 
 // Spectrum-based colors
 $spectrum: primary, subtitles, headings, status-red, status-green, white, lowlight, strokes, accent-light-1, accent-light-2, highlight-2, status-yellow;
+
 @each $color in $spectrum {
     .text-#{$color} {
         color: var(--#{$color});
