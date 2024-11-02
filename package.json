@@ -7,7 +7,8 @@
     "start": "vite",
     "build": "vite build",
     "start_stage": "env-cmd -f .env.stage npm run start",
-    "build_stage": "env-cmd -f .env.stage npm run build"
+    "build_stage": "env-cmd -f .env.stage npm run build",
+    "prettify": "npx prettier --write --ignore-unknown --cache --cache-location=node_modules/.cache/alfred_prettier_cached_file src/"
   },
   "dependencies": {
     "classnames": "^2.5.1",
@@ -19,6 +20,7 @@
     "@types/react": "^18.3.10",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.2",
+    "prettier": "2.8.1",
     "env-cmd": "^10.1.0",
     "eslint": "^9.11.1",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",

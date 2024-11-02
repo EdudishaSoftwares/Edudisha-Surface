@@ -132,7 +132,8 @@ const Button: React.FC<ButtonProps> = ({
         backgroundColor: currentBackgroundColor,
         color: currentTextColor,
         padding: ButtonSizeMap[size],
-        border: appearence === "ghost" ? `1px solid ${colorText[color]}` : "none",
+        border:
+          appearence === "ghost" ? `1px solid ${colorText[color]}` : "none",
         borderRadius: borderRadiusMap[borderRadius],
         outline: "none",
         cursor: "pointer",

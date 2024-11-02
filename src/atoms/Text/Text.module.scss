@@ -1,0 +1,111 @@
+@import '../../assets/colors';
+// Text Component Styles
+.text {
+    font-family: 'Times New Roman', Times, serif, 'Apple-System', Arial, Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'STXihei', sans-serif;
+    line-height: normal;
+    color: black;
+    margin: 0;
+
+    // Modifiers for components like blockquote, kbd, etc.
+    &.blockquote {
+        font-style: italic;
+        padding-left: 1.5rem;
+        border-left: 2px solid gray;
+    }
+
+    &.kbd {
+        background-color: darkgray;
+        border: solid #c8c8c8;
+        border-radius: 0.25em;
+        font-size: 0.875em;
+        padding: 0.2em 0.3em;
+    }
+
+    &.text-muted {
+        color: gray;
+    }
+
+    // Text Alignment
+    &-left {
+        text-align: left;
+    }
+
+    &-center {
+        text-align: center;
+    }
+
+    &-right {
+        text-align: right;
+    }
+
+    &-justify {
+        text-align: justify;
+    }
+
+    // Text Transformation
+    &-uppercase {
+        text-transform: uppercase;
+    }
+
+    &-lowercase {
+        text-transform: lowercase;
+    }
+
+    &-capitalize {
+        text-transform: capitalize;
+    }
+
+    // Font Weights
+    &-thin {
+        font-weight: 100;
+    }
+
+    &-light {
+        font-weight: 300;
+    }
+
+    &-regular {
+        font-weight: 400;
+    }
+
+    &-medium {
+        font-weight: 500;
+    }
+
+    &-semibold {
+        font-weight: 600;
+    }
+
+    &-bold {
+        font-weight: 700;
+    }
+
+    &-extrabold {
+        font-weight: 800;
+    }
+
+    // Text Ellipsis (for multiline truncation)
+    &-ellipsis {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        text-overflow: ellipsis;
+
+        // Fallback for non-WebKit browsers
+        @supports not (-webkit-line-clamp: 1) {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+}
+
+// Spectrum-based colors
+$spectrum: primary, subtitles, headings, status-red, status-green, white, lowlight, strokes, accent-light-1, accent-light-2, highlight-2, status-yellow;
+@each $color in $spectrum {
+    .text-#{$color} {
+        color: var(--#{$color});
+    }
+}

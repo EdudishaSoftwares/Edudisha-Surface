@@ -17,7 +17,7 @@ export interface ModalState {
 export interface ModalHeaderProps {
     isClosable?: boolean;
     children: ReactNode;
-    onClose: () => void;
+    onClose?: () => void;
 }
 
 export interface ModalBodyProps {

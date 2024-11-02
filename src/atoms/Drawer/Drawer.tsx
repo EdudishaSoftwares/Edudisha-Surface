@@ -1,58 +1,54 @@
-import React, { ReactNode } from 'react';
-import style from './Drawer.module.scss';
-import classNames from 'classnames/bind';
-import Modal from '../Modal/Modal';
-
-const cx = classNames.bind(style);
+import React from "react";
+import Modal from "../Modal/Modal";
 
 interface DrawerProps {
-    open: boolean;
-    onClose: () => void;
-    position?: 'top' | 'bottom' | 'left' | 'right';
-    children: ReactNode;
-    size: "small" | "medium" | "large";
+  open: boolean;
+  onClose: () => void;
+  position?: "top" | "bottom" | "left" | "right";
+  children: React.ReactNode;
+  size: "small" | "medium" | "large";
 }
 
 interface DrawerHeaderProps {
-    children: ReactNode;
-    onClose: () => void;
+  children: React.ReactNode;
+  onClose: () => void;
 }
 
 interface DrawerBodyProps {
-    children: ReactNode;
+  children: React.ReactNode;
 }
 
 interface DrawerFooterProps {
-    children: ReactNode;
+  children: React.ReactNode;
 }
 
 const Drawer: React.FC<DrawerProps> & {
-    Header: React.FC<DrawerHeaderProps>;
-    Body: React.FC<DrawerBodyProps>;
-    Footer: React.FC<DrawerFooterProps>;
-    Title: React.FC<DrawerBodyProps>;
-} = ({ open, onClose, size, position = 'right', children }) => {
-    return (
-        <Modal open={open} onClose={onClose} drawer position={position} size={size}>
-            {children}
-        </Modal>
-    );
+  Header: React.FC<DrawerHeaderProps>;
+  Body: React.FC<DrawerBodyProps>;
+  Footer: React.FC<DrawerFooterProps>;
+  Title: React.FC<DrawerBodyProps>;
+} = ({ open, onClose, size, position = "right", children }) => {
+  return (
+    <Modal open={open} onClose={onClose} drawer position={position} size={size}>
+      {children}
+    </Modal>
+  );
 };
 
 Drawer.Header = ({ children, onClose }: DrawerHeaderProps) => (
-    <Modal.Header onClose={onClose}>{children}</Modal.Header>
+  <Modal.Header onClose={onClose}>{children}</Modal.Header>
 );
 
 Drawer.Title = ({ children }: DrawerBodyProps) => (
-    <Modal.Title>{children}</Modal.Title>
+  <Modal.Title>{children}</Modal.Title>
 );
 
 Drawer.Body = ({ children }: DrawerBodyProps) => (
-    <Modal.Body>{children}</Modal.Body>
+  <Modal.Body>{children}</Modal.Body>
 );
 
 Drawer.Footer = ({ children }: DrawerFooterProps) => (
-    <Modal.Footer>{children}</Modal.Footer>
+  <Modal.Footer>{children}</Modal.Footer>
 );
 
 export default Drawer;
