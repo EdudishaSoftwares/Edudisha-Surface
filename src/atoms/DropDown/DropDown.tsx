@@ -3,6 +3,7 @@ import React from "react";
 // Atoms
 import Button from "../Button/Button";
 import DownArrow from "../icons/DownArrow";
+import OutsideClickHandler from "../OutsideClickHandler";
 // Styles
 import classNames from "classnames/bind";
 import style from "./DropDown.module.scss";
@@ -42,11 +43,6 @@ const DropDown = (props: DropDownProps) => {
       })
     );
   }, []);
-
-  // Handle drop down content container
-  const toggleDropDown = () => {
-    setOpenDropDown(!openDropDown);
-  };
 
   // Handle visibility of drop down data
   const handleUpdateDropDownData = React.useCallback(
@@ -97,8 +93,8 @@ const DropDown = (props: DropDownProps) => {
   };
 
   return (
-    <div className={cx("outer_dropdown")}>
-      <Button onClick={toggleDropDown} size={size} appearence="primary">
+    <OutsideClickHandler className={cx("outer_dropdown")} onClickEvents={() => {setOpenDropDown(false)}}>
+      <Button onClick={()=>setOpenDropDown(!openDropDown)} size={size} appearence="primary">
         <div className={cx("drop-down-button")}>
           <div className={cx("content-title")}>
             <span
@@ -128,7 +124,7 @@ const DropDown = (props: DropDownProps) => {
           ))}
         </div>
       )}
-    </div>
+    </OutsideClickHandler>
   );
 };
 
@@ -137,11 +133,17 @@ const DropDownItemAtom = (props: DropDownItemProps) => {
 
   // Handle toggle on click picker
   const handleClickPickerChange = React.useCallback(() => {
-    handleChange(data.value, !data.isChecked);
-    if (!data.isChecked) {
-      addValue(data.label);
-    } else {
-      removeValue(data.label);
+    if(multiSelect){
+      handleChange(data.value, !data.isChecked);
+      if (!data.isChecked) {
+        addValue(data.label);
+      } else {
+        removeValue(data.label);
+      }
+    }
+    else{
+      handleChange(data.value, true);
+      addValue(data.label)
     }
   }, [handleChange, data]);
 

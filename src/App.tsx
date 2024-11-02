@@ -11,7 +11,7 @@ function App() {
 
   for (let i = 0; i < 20; i++) {
     data.push({
-      label: `labeeeeeeeeeeeeeeel${i}`,
+      label: `eeeel${i}`,
       value: `label${i}`,
     });
   }
