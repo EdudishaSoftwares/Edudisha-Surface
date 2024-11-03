@@ -1,22 +1,27 @@
-const fontSizeMap = { sm: 12, md: 14, lg: 16, xl: 18, xxl: 20 };
-import { WithAsProps, Colors } from "../../typings/index";
+import { WithAsProps, Colors, CSSSpacingSizes, Styleguide } from "../../typings/index";
 import React from "react";
 
-export interface TextProps
-  extends WithAsProps,
-    React.HTMLAttributes<HTMLDivElement> {
+export type TextProps = {
+  as?: React.ElementType;
+  to?: string;
   color?: Colors;
-  size?: keyof typeof fontSizeMap | number | string;
-  muted?: boolean;
-  transform?: "uppercase" | "lowercase" | "capitalize";
-  align?: "left" | "center" | "right" | "justify";
-  weight?:
-    | "thin"
-    | "light"
-    | "regular"
-    | "medium"
-    | "semibold"
-    | "bold"
-    | "extrabold";
-  maxLines?: number;
+  styleguide: Styleguide;
+  underline?: boolean;
+  strikeThrough?: boolean;
+  mt?: CSSSpacingSizes;
+  mb?: CSSSpacingSizes;
+  ml?: CSSSpacingSizes;
+  mr?: CSSSpacingSizes;
+  ellipsis?: boolean;
+  onClick?: (event: React.SyntheticEvent) => void;
+  copiable?: CopiableType;
+  breakWord?: boolean;
+  textTransform?: 'uppercase' | 'lowercase' | 'capitalize';
+  dangerouslySetInnerHTML?: { __html: string };
+  align?: 'left' | 'center' | 'right';
+  ellipsisClamp?: number;
+}
+
+export type CopiableType = {
+  text: string
 }

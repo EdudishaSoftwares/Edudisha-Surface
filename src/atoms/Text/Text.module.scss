@@ -1,113 +1,196 @@
-@use '../../assets/colors' as *; 
-
-// Text Component Styles
-.text {
-    font-family: 'Times New Roman', Times, serif, 'Apple-System', Arial, Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'STXihei', sans-serif;
-    line-height: normal;
-    color: black;
-    margin: 0;
-
-    // Modifiers for components like blockquote, kbd, etc.
-    &.blockquote {
-        font-style: italic;
-        padding-left: 1.5rem;
-        border-left: 2px solid gray;
-    }
-
-    &.kbd {
-        background-color: darkgray;
-        border: solid #c8c8c8;
-        border-radius: 0.25em;
-        font-size: 0.875em;
-        padding: 0.2em 0.3em;
-    }
-
-    &.text-muted {
-        color: gray;
-    }
-
-    // Text Alignment
-    &-left {
-        text-align: left;
-    }
-
-    &-center {
-        text-align: center;
-    }
-
-    &-right {
-        text-align: right;
-    }
-
-    &-justify {
-        text-align: justify;
-    }
-
-    // Text Transformation
-    &-uppercase {
-        text-transform: uppercase;
-    }
-
-    &-lowercase {
-        text-transform: lowercase;
-    }
-
-    &-capitalize {
-        text-transform: capitalize;
-    }
-
-    // Font Weights
-    &-thin {
-        font-weight: 100;
-    }
-
-    &-light {
-        font-weight: 300;
-    }
-
-    &-regular {
-        font-weight: 400;
-    }
-
-    &-medium {
-        font-weight: 500;
-    }
-
-    &-semibold {
-        font-weight: 600;
-    }
-
-    &-bold {
-        font-weight: 700;
-    }
-
-    &-extrabold {
-        font-weight: 800;
-    }
-
-    // Text Ellipsis (for multiline truncation)
-    &-ellipsis {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
-        text-overflow: ellipsis;
-
-        // Fallback for non-WebKit browsers
-        @supports not (-webkit-line-clamp: 1) {
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-    }
-
+@import '../../assets/colors';
+.body1 {
+    font-size: 16px;
+    line-height: 24px;
 }
 
-// Spectrum-based colors
-$spectrum: primary, subtitles, headings, status-red, status-green, white, lowlight, strokes, accent-light-1, accent-light-2, highlight-2, status-yellow;
+.body2 {
+    font-size: 14px;
+    line-height: 20px;
+}
 
-@each $color in $spectrum {
-    .text-#{$color} {
-        color: var(--#{$color});
-    }
+.body3 {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.heading7 {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: bold;
+}
+
+.primary-colored {
+    color: var(--primary);
+}
+
+.subtitles-colored {
+    color: var(--subtitles);
+}
+
+.headings-colored {
+    color: var(--headings);
+}
+
+.statusred-colored {
+    color: var(--status-red);
+}
+
+.white-colored {
+    color: var(--white);
+}
+
+.statusgreen-colored {
+    color: var(--status-green);
+}
+
+.lowlight-colored {
+    color: var(--lowlight-2);
+}
+
+.strokes-colored {
+    color: var(--strokes);
+}
+
+.accentlight1-colored {
+    color: var(--accent-light-1);
+}
+
+.accentlight2-colored {
+    color: var(--accent-light-2);
+}
+
+.highlight2-colored {
+    color: var(--highlight-2);
+}
+
+.statusyellow-colored {
+    color: var(--status-yellow)
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.strike-through {
+    text-decoration: line-through;
+}
+
+.ml-xs {
+    margin-left: spacing(xs)
+}
+
+.mr-xs {
+    margin-right: spacing(xs)
+}
+
+.mt-xs {
+    margin-top: spacing(xs)
+}
+
+.mb-xs {
+    margin-bottom: spacing(xs)
+}
+
+.ml-sm {
+    margin-left: spacing(sm)
+}
+
+.mr-sm {
+    margin-right: spacing(sm)
+}
+
+.mt-sm {
+    margin-top: spacing(sm)
+}
+
+.mb-sm {
+    margin-bottom: spacing(sm)
+}
+
+.ml-md {
+    margin-left: spacing(md)
+}
+
+.mr-md {
+    margin-right: spacing(md)
+}
+
+.mt-md {
+    margin-top: spacing(md)
+}
+
+.mb-md {
+    margin-bottom: spacing(md)
+}
+
+.ml-lg {
+    margin-left: spacing(lg)
+}
+
+.mr-lg {
+    margin-right: spacing(lg)
+}
+
+.mt-lg {
+    margin-top: spacing(lg)
+}
+
+.mb-lg {
+    margin-bottom: spacing(lg)
+}
+
+.ml-xl {
+    margin-left: spacing(xl)
+}
+
+.mr-xl {
+    margin-right: spacing(xl)
+}
+
+.mt-xl {
+    margin-top: spacing(xl)
+}
+
+.mb-xl {
+    margin-bottom: spacing(xl)
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: initial;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.break-word {
+    white-space: break-spaces;
+}
+
+.text-transform-capitalize {
+    text-transform: capitalize;
+}
+
+.text-transform-lowercase {
+    text-transform: lowercase;
+}
+
+.text-transform-uppercase {
+    text-transform: uppercase;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-right {
+    text-align: right;
 }
