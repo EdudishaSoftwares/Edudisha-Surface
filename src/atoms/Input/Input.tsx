@@ -127,8 +127,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 variant === "halfWidth"
                   ? "50%"
                   : variant === "fullWidth"
-                  ? "100%"
-                  : "auto",
+                    ? "100%"
+                    : "auto",
               border: "1px solid #e5e5ea",
               outline: "none",
               fontSize: "16px",
@@ -238,8 +238,8 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
                 variant === "halfWidth"
                   ? "50%"
                   : variant === "fullWidth"
-                  ? "100%"
-                  : "auto",
+                    ? "100%"
+                    : "auto",
               resize,
               display: "block",
               border: "1px solid #e5e5ea",

@@ -35,7 +35,7 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
     }
   };
 
-  const checkSize = sizes.includes(size as typeof sizes[number])
+  const checkSize = sizes.includes(size as (typeof sizes)[number])
     ? size
     : "medium";
   const modalClass = cx(
