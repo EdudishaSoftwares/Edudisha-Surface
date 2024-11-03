@@ -4,6 +4,8 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import DropDown from "./atoms/DropDown";
 
+import CallIcon from './atoms/icons/CallIcon'
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -38,6 +40,7 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
+      <CallIcon />
     </>
   );
 }
