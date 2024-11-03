@@ -4,7 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import DropDown from "./atoms/DropDown";
 
-import CallIcon from './atoms/icons/CallIcon'
+import CallIcon from "./atoms/icons/CallIcon";
 
 function App() {
   const [count, setCount] = useState(0);
