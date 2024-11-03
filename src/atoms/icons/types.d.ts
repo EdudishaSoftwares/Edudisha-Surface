@@ -1,14 +1,10 @@
-export type AlignType = 'top' | 'middle' | 'bottom';
-
-export type ColorType = "black" | "white" | "lightGrey" | "grey" | "primary";
-
-export type SizeType = "s" | "m" | "lg";
+import { Sizes, Colors, AlignType } from "../../typings";
 
 export interface IconProps {
-  width?: SizeType;
-  height?: SizeType;
+  width?: Sizes;
+  height?: Sizes;
   fillPath?: string;
   align?: AlignType;
-  fill?: ColorType;
-  stroke?: ColorType;
+  fill?: Colors;
+  stroke?: Colors;
 }

@@ -156,6 +156,38 @@
     margin-bottom: spacing(xl)
 }
 
+.ml-xxl {
+    margin-left: spacing(xxl)
+}
+
+.mr-xxl {
+    margin-right: spacing(xxl)
+}
+
+.mt-xxl {
+    margin-top: spacing(xxl)
+}
+
+.mb-xxl {
+    margin-bottom: spacing(xxl)
+}
+
+.ml-full {
+    margin-left: spacing(full)
+}
+
+.mr-full {
+    margin-right: spacing(full)
+}
+
+.mt-full {
+    margin-top: spacing(full)
+}
+
+.mb-full {
+    margin-bottom: spacing(full)
+}
+
 .ellipsis {
     white-space: nowrap;
     overflow: hidden;

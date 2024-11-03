@@ -89,6 +89,8 @@ const DropDown = (props: DropDownProps) => {
     else if (size === "md") return "md-max-width";
     else if (size === "lg") return "lg-max-width";
     else if (size === "xl") return "xl-max-width";
+    else if (size === "xxl") return "xxl-max-width";
+    else if (size === "full") return "full-max-width";
     else return "";
   };
 

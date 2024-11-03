@@ -1,6 +1,6 @@
 import React from "react";
 import { FlexboxGridProps } from "../../atoms/FlexboxGrid";
-import { CSSSpacingSizes } from "../../typings/index";
+import { Sizes } from "../../typings/index";
 
 export type FlexboxComponentProps = Omit<FlexboxGridProps, "align"> & {
   direction: "row" | "column";
@@ -10,8 +10,8 @@ export type FlexboxComponentProps = Omit<FlexboxGridProps, "align"> & {
   onMouseLeave?: (event: React.MouseEvent) => void;
   onMouseOverCapture?: (event: React.MouseEvent) => void;
   onMouseOutCapture?: (event: React.MouseEvent) => void;
-  mt?: CSSSpacingSizes;
-  mb?: CSSSpacingSizes;
-  gutter?: CSSSpacingSizes;
+  mt?: Sizes;
+  mb?: Sizes;
+  gutter?: Sizes;
   align?: "middle" | "top" | "bottom" | "stretch" | "end";
 };

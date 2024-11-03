@@ -1,8 +1,4 @@
-export type AlignType = 'top' | 'middle' | 'bottom';
-
-export type ColorType = "black" | "white" | "lightGrey" | "grey" | "primary";
-
-export type SizeType = "s" | "m" | "lg";
+import { SizeType, ColorType, AlignType } from "../commons/commonTypes";
 
 export interface IconProps {
   width?: SizeType;

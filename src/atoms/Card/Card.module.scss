@@ -53,6 +53,16 @@
     padding-right: spacing(xl);
   }
 
+  &.padding-horizontal-xxl {
+    padding-left: spacing(xxl);
+    padding-right: spacing(xxl);
+  }
+
+  &.padding-horizontal-full {
+    padding-left: spacing(full);
+    padding-right: spacing(full);
+  }
+
   // Vertical Padding Classes
   &.padding-vertical-xs {
     padding-top: spacing(xs);
@@ -78,6 +88,16 @@
     padding-top: spacing(xl);
     padding-bottom: spacing(xl);
   }
+
+  &.padding-vertical-xxl {
+    padding-top: spacing(xxl);
+    padding-bottom: spacing(xxl);
+  }
+
+  &.padding-vertical-full {
+    padding-top: spacing(full);
+    padding-bottom: spacing(full);
+  }
 }
 
 // Margin Utility Classes (remain global)
@@ -86,9 +106,13 @@
 .mt-md { margin-top: spacing(md); }
 .mt-lg { margin-top: spacing(lg); }
 .mt-xl { margin-top: spacing(xl); }
+.mt-xl { margin-top: spacing(xxl); }
+.mt-xl { margin-top: spacing(full); }
 
 .mb-xs { margin-bottom: spacing(xs); }
 .mb-sm { margin-bottom: spacing(sm); }
 .mb-md { margin-bottom: spacing(md); }
 .mb-lg { margin-bottom: spacing(lg); }
 .mb-xl { margin-bottom: spacing(xl); }
+.mb-xl { margin-bottom: spacing(xxl); }
+.mb-xl { margin-bottom: spacing(full); }

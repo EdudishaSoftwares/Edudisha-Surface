@@ -1,9 +1,9 @@
 
 export type DropDownPropsData = { label: string; value: string };
 export type DropDownCheckedPropsData = { label: string; value: string; isChecked: boolean };
+import { Sizes } from "../../typings";
 
 type ButtonSize = "s" | "m" | "lg";
-type Sizes = "sm" | "md" | "lg" | "xl";
 
 export type DropDownProps = {
   data: DropDownPropsData[];

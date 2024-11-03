@@ -1,8 +1,6 @@
 import React from "react";
 
-export interface WithAsProps<
-  As extends React.ElementType | string = React.ElementType
-> {
+export interface WithAsProps<As extends React.ElementType | string = React.ElementType> {
   as?: As;
   className?: string;
   style?: React.CSSProperties;
@@ -27,10 +25,12 @@ export interface AnimationEventProps {
 
 export type PickerAppearance = "default" | "subtle";
 
+export type AlignType = 'top' | 'middle' | 'bottom';
+
 export type ToArray<V> = V extends any[] ? V : V[];
 
-export type Sizes = "xs" | "sm" | "md" | "lg";
-export type CSSSpacingSizes = "xs" | "sm" | "md" | "lg" | "xl";
+export type Sizes = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "full";
+
 export type Styleguide =
   | "heading1"
   | "heading2"
@@ -42,26 +42,25 @@ export type Styleguide =
   | "body1"
   | "body2"
   | "body3";
+
 export type ValueType = string | number;
+
 export type ValueTypes = (string | number)[];
+
 export type ButtonGroupItemDataType<T> = ItemDataType<T> & {
   toolTip?: string;
   isDisabled?: boolean;
 };
+
 export type ItemDataType<T> = {
   label?: string | React.ReactNode;
   value?: T;
 };
+
 export type Colors =
   | "primary"
   | "subtitles"
   | "headings"
-  | "status-red"
-  | "status-green"
   | "white"
   | "lowlight"
   | "strokes"
-  | "accent-light-1"
-  | "accent-light-2"
-  | "highlight-2"
-  | "status-yellow";

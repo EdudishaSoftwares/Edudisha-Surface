@@ -1,35 +1,20 @@
 import React from "react";
-// import { IconProps, ColorMap, SizeMap } from "./types";  // need to add ColorMap and SizeMap in constants
-
-import { IconProps, SizeType, ColorType } from "./types";
-
-const SizeMap: Record<SizeType, string> = {
-  s: "1rem",
-  m: "2rem",
-  lg: "3rem",
-};
-
-const ColorMap: Record<ColorType, string> = {
-  black: "#000000",
-  white: "#ffffff",
-  lightGrey: "#aaaaaa",
-  grey: "#888888",
-  primary: "#246851",
-};
+import { IconProps } from "./types";
+import { SizesMap, ColorsMap } from "../../constants/constants";
 
 const CallIcon: React.FC<IconProps> = ({
-  height = "m",
-  width = "m",
+  height = "md",
+  width = "md",
   fillPath = "none",
   align = "middle",
-  fill = "black",
-  stroke = "black",
+  fill = "primary",
+  stroke = "primary",
   ...rest
 }) => {
-  const currentHeight = SizeMap[height];
-  const currentWidth = SizeMap[width];
-  const currentFill = ColorMap[fill];
-  const currentStroke = ColorMap[stroke];
+  const currentHeight = SizesMap[height];
+  const currentWidth = SizesMap[width];
+  const currentFill = ColorsMap[fill];
+  const currentStroke = ColorsMap[stroke];
 
   return (
     <svg

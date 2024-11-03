@@ -1,20 +1,8 @@
 import React from "react";
+import { CheckboxGroupProps } from "./types";
 import style from "./CheckboxGroup.module.scss";
 import classNames from "classnames/bind";
 const cx = classNames.bind(style);
-
-interface CheckboxGroupProps {
-  options: (number | string)[];
-  active: (number | string)[];
-  onChange: (
-    active: (number | string)[],
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => void;
-  id: string;
-  inline?: boolean;
-}
 
 const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
   options,
@@ -23,8 +11,7 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
   id,
   inline = false,
 }) => {
-  const [active, setActive] =
-    React.useState<(number | string)[]>(initialActive);
+  const [active, setActive] = React.useState<(number | string)[]>(initialActive);
 
   React.useEffect(() => {
     setActive(initialActive);

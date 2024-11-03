@@ -1,4 +1,4 @@
-import { WithAsProps, Colors, CSSSpacingSizes, Styleguide } from "../../typings/index";
+import { Colors, Sizes, Styleguide } from "../../typings/index";
 import React from "react";
 
 export type TextProps = {
@@ -8,10 +8,10 @@ export type TextProps = {
   styleguide: Styleguide;
   underline?: boolean;
   strikeThrough?: boolean;
-  mt?: CSSSpacingSizes;
-  mb?: CSSSpacingSizes;
-  ml?: CSSSpacingSizes;
-  mr?: CSSSpacingSizes;
+  mt?: Sizes;
+  mb?: Sizes;
+  ml?: Sizes;
+  mr?: Sizes;
   ellipsis?: boolean;
   onClick?: (event: React.SyntheticEvent) => void;
   copiable?: CopiableType;
