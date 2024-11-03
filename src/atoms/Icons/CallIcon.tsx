@@ -3,30 +3,29 @@ import React from "react";
 
 import { IconProps, SizeType, ColorType } from "./types";
 
-const SizeMap : Record<SizeType, string> = {
+const SizeMap: Record<SizeType, string> = {
   s: "1rem",
   m: "2rem",
   lg: "3rem",
-}
+};
 
-const ColorMap : Record<ColorType, string> = {
+const ColorMap: Record<ColorType, string> = {
   black: "#000000",
   white: "#ffffff",
   lightGrey: "#aaaaaa",
   grey: "#888888",
   primary: "#246851",
-}
+};
 
-const CallIcon : React.FC<IconProps> = ({
-    height = "m",
-    width =  "m",
-    fillPath = "none",
-    align = "middle",
-    fill = "black",
-    stroke = "black",
-    ...rest
+const CallIcon: React.FC<IconProps> = ({
+  height = "m",
+  width = "m",
+  fillPath = "none",
+  align = "middle",
+  fill = "black",
+  stroke = "black",
+  ...rest
 }) => {
-
   const currentHeight = SizeMap[height];
   const currentWidth = SizeMap[width];
   const currentFill = ColorMap[fill];

@@ -4,13 +4,13 @@ import classNames from "classnames/bind";
 import style from "./Link.module.scss";
 const cx = classNames.bind(style);
 
-const Link : React.FC<LinkProps>  = ({
-    relative = "full",
-    underline = true,
-    rest,
-    target,
-    download,
-    children,
+const Link: React.FC<LinkProps> = ({
+  relative = "full",
+  underline = true,
+  rest,
+  target,
+  download,
+  children,
 }) => {
   if (relative === "full")
     return (

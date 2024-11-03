@@ -1,4 +1,4 @@
-import iconify from "hoc/iconify";
+import iconify from "./Iconify";
 import { IconProps } from "./types";
 
 const SuccessIcon = (props: IconProps): JSX.Element => {

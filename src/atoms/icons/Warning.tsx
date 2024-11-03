@@ -1,5 +1,5 @@
-import { IconProps } from "atoms/icons/types";
-import iconify from "hoc/iconify";
+import iconify from "./Iconify";
+import { IconProps } from "./types";
 
 const Warning = (props: IconProps): JSX.Element => {
   const { height, width, align, fillPath } = props;

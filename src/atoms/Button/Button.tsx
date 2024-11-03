@@ -110,8 +110,8 @@ const Button: React.FC<ButtonProps> = ({
         ? darkenColor(customBackgroundColor)
         : customBackgroundColor
       : isClicked
-        ? darkenColorMap[backgroundColor]
-        : backgroundColorMap[backgroundColor];
+      ? darkenColorMap[backgroundColor]
+      : backgroundColorMap[backgroundColor];
   };
 
   const determineTextColor = (): string => {
