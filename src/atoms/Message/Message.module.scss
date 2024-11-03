@@ -1,0 +1,31 @@
+.message {
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+
+.cross-icon {
+  cursor: pointer;
+}
+
+.message-white {
+  background-color: var(--white);
+}
+.message-info {
+  background-color: var(--accent-light-1);
+}
+
+.message-primary {
+  background-color: var(--accent-light-1);
+}
+
+.message-success {
+  background-color: var(--accent-light-1);
+}
+
+.message-warning {
+  background-color: var(--status-warning-1);
+}
+
+.message-error {
+  background-color: var(--highlight-3);
+}

@@ -1,46 +1,84 @@
-import React from "react";
-import classNames from "classnames/bind";
-import style from "./Text.module.scss";
+import React, { PropsWithChildren } from "react";
 import { TextProps } from "./type";
-
+import style from "./Text.module.scss";
+import classNames from "classnames/bind";
 const cx = classNames.bind(style);
 
-const fontSizeMap = { sm: 12, md: 14, lg: 16, xl: 18, xxl: 20 };
+const styleguideToHTMLMapper = {
+  heading1: "h1",
+  heading2: "h2",
+  heading3: "h3",
+  heading4: "h4",
+  heading5: "h5",
+  heading6: "h6",
+  heading7: "p",
+  body1: "p",
+  body2: "p",
+  body3: "p",
+};
 
-const Text: React.FC<TextProps> = ({
-  as: Component = "p",
-  color,
-  size,
-  align,
-  weight = "regular",
-  transform,
-  muted,
-  maxLines,
-  className,
-  style: inlineStyle,
-  children,
-  ...rest
-}) => {
-  const classes = cx(
-    "text",
-    { [`text-${color}`]: color },
-    { [`text-${align}`]: align },
-    { [`text-${weight}`]: weight },
-    { [`text-${transform}`]: transform },
-    { "text-muted": muted, "text-ellipsis": maxLines }
-  );
+const Text = (props: PropsWithChildren<TextProps>): JSX.Element => {
+  let {
+    as,
+    color,
+    styleguide,
+    children,
+    underline = false,
+    strikeThrough = false,
+    mt,
+    mb,
+    ml,
+    mr,
+    ellipsis = false,
+    ellipsisClamp,
+    copiable,
+    breakWord,
+    textTransform,
+    align,
+    ...rest
+  } = props;
 
-  const styles = {
-    fontSize: fontSizeMap[size as keyof typeof fontSizeMap] || size,
-    WebkitLineClamp: maxLines,
-    ...inlineStyle,
-  };
+  const As = as
+    ? as
+    : styleguideToHTMLMapper[styleguide] || ("p" as React.ElementType);
 
-  return (
-    <Component {...rest} className={classes} style={styles}>
+  const Child = (
+    <As
+      className={cx([
+        styleguide,
+        `${color ? `${color}-colored` : ""}`,
+        `${underline ? "underline" : ""}`,
+        `${strikeThrough ? "strike-through" : ""}`,
+        `${ml ? `ml-${ml}` : ""}`,
+        `${mr ? `mr-${mr}` : ""}`,
+        `${mt ? `mt-${mt}` : ""}`,
+        `${mb ? `mb-${mb}` : ""}`,
+        `${ellipsis ? "ellipsis" : ""}`,
+        `${copiable ? "cursor-pointer" : ""}`,
+        `${breakWord ? "break-word" : ""}`,
+        `${textTransform ? `text-transform-${textTransform}` : ""}`,
+        `${align ? `text-align-${align}` : ""}`,
+      ])}
+      {...rest}
+      style={
+        ellipsisClamp
+          ? {
+              display: "-webkit-box",
+              WebkitLineClamp: ellipsisClamp,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }
+          : {}
+      }
+    >
       {children}
-    </Component>
+    </As>
   );
+
+  const content = Child;
+
+  return content;
 };
 
 export default Text;
