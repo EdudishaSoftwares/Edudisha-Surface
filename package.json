@@ -9,7 +9,8 @@
     "start_stage": "env-cmd -f .env.stage npm run start",
     "build_stage": "env-cmd -f .env.stage npm run build",
     "prettify-check": "npx prettier --check src/",
-    "prettify": "npx prettier --write --ignore-unknown --cache --cache-location=node_modules/.cache/alfred_prettier_cached_file src/"
+    "prettify": "npx prettier --write --ignore-unknown --cache --cache-location=node_modules/.cache/alfred_prettier_cached_file src/",
+    "prettify-dev-check": "git diff --name-only --cached --relative --diff-filter=d | xargs -r npx prettier --check"
   },
   "dependencies": {
     "classnames": "^2.5.1",
@@ -27,6 +28,7 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.12",
     "globals": "^15.9.0",
+    "husky": "^9.1.6",
     "prettier": "2.8.1",
     "sass-embedded": "^1.80.5",
     "typescript": "^5.5.3",

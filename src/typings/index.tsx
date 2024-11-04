@@ -1,6 +1,8 @@
 import React from "react";
 
-export interface WithAsProps<As extends React.ElementType | string = React.ElementType> {
+export interface WithAsProps<
+  As extends React.ElementType | string = React.ElementType
+> {
   as?: As;
   className?: string;
   style?: React.CSSProperties;
@@ -25,7 +27,7 @@ export interface AnimationEventProps {
 
 export type PickerAppearance = "default" | "subtle";
 
-export type AlignType = 'top' | 'middle' | 'bottom';
+export type AlignType = "top" | "middle" | "bottom";
 
 export type ToArray<V> = V extends any[] ? V : V[];
 
@@ -63,4 +65,4 @@ export type Colors =
   | "headings"
   | "white"
   | "lowlight"
-  | "strokes"
+  | "strokes";

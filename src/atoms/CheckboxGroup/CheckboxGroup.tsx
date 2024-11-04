@@ -11,7 +11,8 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
   id,
   inline = false,
 }) => {
-  const [active, setActive] = React.useState<(number | string)[]>(initialActive);
+  const [active, setActive] =
+    React.useState<(number | string)[]>(initialActive);
 
   React.useEffect(() => {
     setActive(initialActive);
