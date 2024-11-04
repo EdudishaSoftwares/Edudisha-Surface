@@ -27,7 +27,13 @@ export interface AnimationEventProps {
 
 export type PickerAppearance = "default" | "subtle";
 
+<<<<<<< HEAD
 export type ToArray<V> = V extends any[] ? V : V[];
+=======
+export type AlignType = "top" | "middle" | "bottom";
+
+export type Sizes = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "full";
+>>>>>>> 603e00bd3231e97a8c8c3db6272e32dce2d9da9a
 
 export type Styleguide =
   | "heading1"

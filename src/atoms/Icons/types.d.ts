@@ -1,10 +1,8 @@
-import { Sizes, Colors, AlignType } from "../../typings";
-
-export interface IconProps {
-  width?: Sizes;
-  height?: Sizes;
+export type IconProps = {
+  width?: number;
+  height?: number;
   fillPath?: string;
-  align?: AlignType;
-  fill?: Colors;
-  stroke?: Colors;
+  align?: 'top' | 'middle' | 'bottom';
+  stroke?: string;
+  fill?: string;
 }

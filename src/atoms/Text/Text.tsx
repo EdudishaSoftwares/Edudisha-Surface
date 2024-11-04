@@ -18,7 +18,7 @@ const styleguideToHTMLMapper = {
 };
 
 const Text = (props: PropsWithChildren<TextProps>): JSX.Element => {
-  let {
+  const {
     as,
     color,
     styleguide,

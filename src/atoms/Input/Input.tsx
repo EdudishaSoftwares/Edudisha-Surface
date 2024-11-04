@@ -84,7 +84,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     }, [Icon, textMessage]);
 
     const handleFocus = () => {
-      inputRef.current && inputRef.current.focus();
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
+      return;
     };
 
     const ValidationIcon =

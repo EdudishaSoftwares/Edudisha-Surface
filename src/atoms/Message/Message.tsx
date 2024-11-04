@@ -10,10 +10,10 @@ import { MessageComponentProps, MessageIconType } from "./types";
 // Style
 import styles from "./Message.module.scss";
 import classNames from "classnames/bind";
-import InfoIcon from "../icons/InfoIcon";
-import Warning from "../icons/Warning";
-import Success from "../icons/Success";
-import Cross from "../icons/Cross";
+import InfoIcon from "../Icons/InfoIcon";
+import Warning from "../Icons/Warning";
+import Success from "../Icons/Success";
+import Cross from "../Icons/Cross";
 
 const cx = classNames.bind(styles);
 
@@ -23,7 +23,7 @@ const Message = (props: MessageComponentProps): JSX.Element => {
 
   const handleCrossClicked = React.useCallback(() => {
     setIsCrossClicked(true);
-    onClose && onClose();
+    if (onClose) onClose();
   }, [onClose]);
 
   if (isCrossClicked) return <></>;
