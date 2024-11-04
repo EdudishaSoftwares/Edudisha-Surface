@@ -6,7 +6,6 @@ import classNames from "classnames/bind";
 const cx = classNames.bind(style);
 
 const Button_2 : React.FC<ButtonProps> = (props) => {
-
     const {
         height,
         width,
@@ -42,7 +41,6 @@ const Button_2 : React.FC<ButtonProps> = (props) => {
         children,
         ...rest
     } = props
-
 
     return (
         <div
