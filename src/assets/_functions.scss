@@ -1,0 +1,39 @@
+@function sizing($size) {
+    @if $size == xs {
+        @return 0.5rem;
+    } @else if $size == sm {
+        @return 0.5rem;
+    } @else if $size == md {
+        @return 0.75rem;
+    } @else if $size == lg {
+        @return 1rem;
+    } @else if $size == xl {
+        @return 1.5rem;
+    } @else if $size == xxl {
+        @return 5rem;
+    } @else if $size == full {
+        @return 100%;
+    }
+
+    @return null;
+}
+
+@function coloring($color) {
+    @if $color == primary {
+        @return #4764cd;
+    } @else if $color == subtitles {
+        @return #555555;
+    } @else if $color == headings {
+        @return #1d2025;
+    } @else if $color == "white" {
+        @return #ffffff;
+    } @else if $color == lowlight {
+        @return #e5e5ea;
+    } @else if $color == strokes {
+        @return #f2f2f5;
+    } @else if $color == placeholder {
+        @return #f2f2f5;
+    }
+
+    @return null;
+}

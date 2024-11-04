@@ -1,0 +1,169 @@
+@use '../../assets/functions' as *;
+@use '../../assets/varibales' as *;
+
+// Button default style
+.button{
+  background-color: coloring(white);
+  border-radius: sizing(xs);
+  padding-left: sizing(lg);
+  padding-right: sizing(lg);
+  padding-top: sizing(md);
+  padding-bottom: sizing(md);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// Common props css
+@each $size in $sizes {
+    // Width classes
+    .width-#{$size} {
+        width: sizing($size);
+    }
+
+    .width-fit-content {
+        width: fit-content;
+    }
+
+    // Max width classes
+    .max-width-#{$size} {
+        max-width: sizing($size);
+    }
+
+    // Min width classes
+    .min-width-#{$size} {
+        min-width: sizing($size);
+    }
+
+    // Height classes
+    .height-#{$size} {
+        height: sizing($size);
+    }
+
+    .height-fit-content {
+        height: fit-content;
+    }
+
+    // Max height classes
+    .max-height-#{$size} {
+        max-height: sizing($size);
+    }
+
+    // Min height classes
+    .min-height-#{$size} {
+        min-height: sizing($size);
+    }
+
+    // Margin classes
+    .margin-#{$size} {
+        margin: sizing($size);
+    }
+
+    .margin-top-#{$size} {
+        margin-top: sizing($size);
+    }
+
+    .margin-bottom-#{$size} {
+        margin-bottom: sizing($size);
+    }
+
+    .margin-left-#{$size} {
+        margin-left: sizing($size);
+    }
+
+    .margin-right-#{$size} {
+        margin-right: sizing($size);
+    }
+
+    // Padding classes
+    .padding-#{$size} {
+        padding: sizing($size);
+    }
+
+    .padding-top-#{$size} {
+        padding-top: sizing($size);
+    }
+
+    .padding-bottom-#{$size} {
+        padding-bottom: sizing($size);
+    }
+
+    .padding-left-#{$size} {
+        padding-left: sizing($size);
+    }
+
+    .padding-right-#{$size} {
+        padding-right: sizing($size);
+    }
+}
+
+// Button props css
+@each $size in $sizes {
+    // Border width classes
+    .border-width-#{$size} {
+        border-width: sizing($size);
+    }
+
+    // Border radius clsses
+    .border-radius-#{$size} {
+        border-radius: sizing($size);
+    }
+}
+
+@each $color in $colors {
+
+    // Color
+    .color-#{$color} {
+        color: coloring($color);
+    }
+
+    // Background color
+    .background-color-#{$color} {
+        background-color: coloring($color);
+    }
+
+    // Border Color
+    .border-color-#{$color} {
+        border-color: coloring($color);
+    }
+
+    // On hover background color
+    .on-hover-background-color-#{$color} {
+        &:hover {
+            background-color: coloring($color);
+        }
+    }
+
+    // On hover border color
+    .on-hover-border-color-#{$color} {
+        &:hover {
+            border-color: coloring($color);
+        }
+    }
+
+    .on-hover-color-#{$color} {
+        &:hover {
+            color: coloring($color);
+        }
+    }
+}
+
+@each $style in $borderStyle {
+    // Border style
+    .border-style-#{$style} {
+        border-style: $style;
+    }
+}
+
+.on-hover-scale-up {
+    &:hover {
+        scale: 1.1;
+    }
+}
+
+.disabled {
+    &:hover {
+        cursor: no-drop;
+    }
+}

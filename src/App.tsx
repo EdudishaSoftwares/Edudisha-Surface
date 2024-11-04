@@ -1,46 +1,42 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import DropDown from "./atoms/DropDown";
 
-import CallIcon from "./atoms/icons/CallIcon";
+import Button_2 from "./atoms/Button_2";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  let data = [];
-
-  for (let i = 0; i < 20; i++) {
-    data.push({
-      label: `eeeel${i}`,
-      value: `label${i}`,
-    });
-  }
 
   return (
     <>
       <div>
-        <>COMPONENT LEFT</>
-        <DropDown size="s" data={data} maxWidth="sm" multiSelect={true} />
-        <>COMPONENT RIGHT</>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Button_2
+        backgroundColor="primary"
+        color="white"
+
+        borderWidth="sm"
+        borderStyle="solid"
+        borderColor="subtitles"
+        borderRadius="sm"
+
+        height="xl"
+        minHeight="lg"
+        maxHeight="xl"
+        width="xxl"
+        minWidth="lg"
+        maxWidth="full"
+
+        padding="xxl"
+
+        onHoverBackgroundColor="white"
+        onHoverBorderColor="primary"
+        onHoverColor="primary"
+
+        onHoverScaleUp
+
+        disabled
+
+        >
+          Click Me
+        </Button_2>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <CallIcon />
     </>
   );
 }
