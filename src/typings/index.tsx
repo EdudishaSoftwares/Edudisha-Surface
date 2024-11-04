@@ -29,8 +29,6 @@ export type PickerAppearance = "default" | "subtle";
 
 export type AlignType = "top" | "middle" | "bottom";
 
-export type ToArray<V> = V extends any[] ? V : V[];
-
 export type Sizes = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "full";
 
 export type Styleguide =

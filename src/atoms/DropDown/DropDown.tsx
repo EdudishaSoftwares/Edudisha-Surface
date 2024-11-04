@@ -2,7 +2,6 @@
 import React from "react";
 // Atoms
 import Button from "../Button/Button";
-import DownArrow from "../icons/DownArrow";
 import OutsideClickHandler from "../OutsideClickHandler";
 // Styles
 import classNames from "classnames/bind";
@@ -13,8 +12,9 @@ import {
   DropDownProps,
   DropDownItemProps,
   DropDownCheckedPropsData,
-  Sizes,
 } from "./types";
+import DownArrow from "../Icons/DownArrow";
+import { Sizes } from "../../typings";
 
 const DropDown = (props: DropDownProps) => {
   const {
@@ -42,7 +42,7 @@ const DropDown = (props: DropDownProps) => {
         };
       })
     );
-  }, []);
+  }, [data]);
 
   // Handle visibility of drop down data
   const handleUpdateDropDownData = React.useCallback(
@@ -64,7 +64,7 @@ const DropDown = (props: DropDownProps) => {
 
       setDropDownData(newData);
     },
-    [dropDownData]
+    [dropDownData, multiSelect]
   );
 
   // Add drop down label in the resultant solution
@@ -73,7 +73,7 @@ const DropDown = (props: DropDownProps) => {
       if (multiSelect) setResultValue([...resultValue, newValue]);
       else setResultValue([newValue]);
     },
-    [dropDownData, resultValue]
+    [resultValue, multiSelect]
   );
 
   // Remove drop down label in the resultant solution
@@ -81,7 +81,7 @@ const DropDown = (props: DropDownProps) => {
     (newValue: string) => {
       setResultValue(resultValue.filter((el) => el !== newValue));
     },
-    [dropDownData, resultValue]
+    [resultValue]
   );
 
   const classNameSize = (size: Sizes) => {
@@ -155,7 +155,7 @@ const DropDownItemAtom = (props: DropDownItemProps) => {
       handleChange(data.value, true);
       addValue(data.label);
     }
-  }, [handleChange, data]);
+  }, [handleChange, data, addValue, multiSelect, removeValue]);
 
   return (
     <div key={`checkpicker-${id}`}>
