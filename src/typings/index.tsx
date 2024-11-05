@@ -27,8 +27,6 @@ export interface AnimationEventProps {
 
 export type PickerAppearance = "default" | "subtle";
 
-// export type ToArray<V> = V extends any[] ? V : V[];
-
 export type Styleguide =
   | "heading1"
   | "heading2"

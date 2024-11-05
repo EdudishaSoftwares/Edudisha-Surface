@@ -9,6 +9,7 @@
     "start_stage": "env-cmd -f .env.stage npm run start",
     "build_stage": "env-cmd -f .env.stage npm run build",
     "lint-check": "npx eslint src/. --max-warnings=0",
+    "prepare": "husky",
     "prettify-check": "npx prettier --check src/",
     "prettify": "npx prettier --write --ignore-unknown --cache --cache-location=node_modules/.cache/alfred_prettier_cached_file src/",
     "prettify-dev-check": "git diff --name-only --cached --relative --diff-filter=d | xargs -r npx prettier --check"
