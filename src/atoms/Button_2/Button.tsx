@@ -39,11 +39,15 @@ const Button_2 : React.FC<ButtonProps> = (props) => {
         onHoverTootltip,
         className,
         children,
+        style,
+        onClick,
         ...rest
     } = props
 
     return (
         <div
+          onClick={onClick}
+          style={style}
           className={cx(
             className,
             'button',
