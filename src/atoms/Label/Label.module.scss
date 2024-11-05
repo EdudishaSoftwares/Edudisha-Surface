@@ -1,0 +1,78 @@
+@import '../../assets/colors';
+
+.label-type-primary {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 2px;
+  text-transform: uppercase;
+
+  &.label-state-success {
+    background-color: var(--status-green);
+    color: var(--white);
+  }
+
+  &.label-state-primary {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+
+  &.label-state-warning {
+    background-color: var(--status-yellow);
+    color: var(--white);
+  }
+
+  &.label-state-failure {
+    background-color: var(--status-red);
+    color: var(--white);
+  }
+
+  &.label-state-subtle {
+    background-color: var(--subtitles);
+    color: var(--white);
+  }
+
+  &.label-state-black {
+    background-color: var(--headings);
+    color: var(--white);
+  }
+}
+
+.label-type-secondary {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+  background-color: var(--strokes);
+  padding: 2px 6px;
+  border-radius: 2px;
+  text-transform: capitalize;
+
+  &.label-state-success {
+    color: var(--status-green);
+  }
+
+  &.label-state-primary {
+    color: var(--primary);
+  }
+
+  &.label-state-warning {
+    color: var(--status-yellow);
+  }
+
+  &.label-state-failure {
+    color: var(--status-red);
+  }
+
+  &.label-state-subtle {
+    color: var(--subtitles);
+  }
+
+  &.label-state-black {
+    color: var(--headings);
+  }
+}
+
+.label-container {
+  display: flex;
+}

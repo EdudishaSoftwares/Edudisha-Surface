@@ -1,0 +1,228 @@
+@import '../../assets/colors';
+.body1 {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.body2 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.body3 {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.heading7 {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: bold;
+}
+
+.primary-colored {
+    color: var(--primary);
+}
+
+.subtitles-colored {
+    color: var(--subtitles);
+}
+
+.headings-colored {
+    color: var(--headings);
+}
+
+.statusred-colored {
+    color: var(--status-red);
+}
+
+.white-colored {
+    color: var(--white);
+}
+
+.statusgreen-colored {
+    color: var(--status-green);
+}
+
+.lowlight-colored {
+    color: var(--lowlight-2);
+}
+
+.strokes-colored {
+    color: var(--strokes);
+}
+
+.accentlight1-colored {
+    color: var(--accent-light-1);
+}
+
+.accentlight2-colored {
+    color: var(--accent-light-2);
+}
+
+.highlight2-colored {
+    color: var(--highlight-2);
+}
+
+.statusyellow-colored {
+    color: var(--status-yellow)
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.strike-through {
+    text-decoration: line-through;
+}
+
+.ml-xs {
+    margin-left: spacing(xs)
+}
+
+.mr-xs {
+    margin-right: spacing(xs)
+}
+
+.mt-xs {
+    margin-top: spacing(xs)
+}
+
+.mb-xs {
+    margin-bottom: spacing(xs)
+}
+
+.ml-sm {
+    margin-left: spacing(sm)
+}
+
+.mr-sm {
+    margin-right: spacing(sm)
+}
+
+.mt-sm {
+    margin-top: spacing(sm)
+}
+
+.mb-sm {
+    margin-bottom: spacing(sm)
+}
+
+.ml-md {
+    margin-left: spacing(md)
+}
+
+.mr-md {
+    margin-right: spacing(md)
+}
+
+.mt-md {
+    margin-top: spacing(md)
+}
+
+.mb-md {
+    margin-bottom: spacing(md)
+}
+
+.ml-lg {
+    margin-left: spacing(lg)
+}
+
+.mr-lg {
+    margin-right: spacing(lg)
+}
+
+.mt-lg {
+    margin-top: spacing(lg)
+}
+
+.mb-lg {
+    margin-bottom: spacing(lg)
+}
+
+.ml-xl {
+    margin-left: spacing(xl)
+}
+
+.mr-xl {
+    margin-right: spacing(xl)
+}
+
+.mt-xl {
+    margin-top: spacing(xl)
+}
+
+.mb-xl {
+    margin-bottom: spacing(xl)
+}
+
+.ml-xxl {
+    margin-left: spacing(xxl)
+}
+
+.mr-xxl {
+    margin-right: spacing(xxl)
+}
+
+.mt-xxl {
+    margin-top: spacing(xxl)
+}
+
+.mb-xxl {
+    margin-bottom: spacing(xxl)
+}
+
+.ml-full {
+    margin-left: spacing(full)
+}
+
+.mr-full {
+    margin-right: spacing(full)
+}
+
+.mt-full {
+    margin-top: spacing(full)
+}
+
+.mb-full {
+    margin-bottom: spacing(full)
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: initial;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.break-word {
+    white-space: break-spaces;
+}
+
+.text-transform-capitalize {
+    text-transform: capitalize;
+}
+
+.text-transform-lowercase {
+    text-transform: lowercase;
+}
+
+.text-transform-uppercase {
+    text-transform: uppercase;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-right {
+    text-align: right;
+}

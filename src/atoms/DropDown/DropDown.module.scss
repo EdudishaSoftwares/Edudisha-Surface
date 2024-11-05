@@ -1,0 +1,105 @@
+.outer_dropdown {
+  position: relative;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  width: max-content;
+
+  /* Inside the button atom */
+  .drop-down-button {
+    display: flex;
+
+    .content-title {
+      width: 90%;
+      overflow: hidden;
+
+      .text-container {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        width: 100%; 
+      }
+    }
+
+    .content-icon {
+      width: 10%;
+      padding-right: 10px;
+    }
+  }
+}
+
+.drop-down-container {
+  z-index: 1;
+  border-radius: 5px;
+  max-height: 300px;
+  background-color: rgb(46, 45, 45);
+  box-shadow: 0px 0px 5px black;
+  overflow-y: auto;
+  text-align: left;
+  position: absolute;
+  top: 43px;
+
+  /* Hide the default scroll */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  .checkpicker-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 5px 10px 5px 0px;
+    background-color: unset;
+    border-radius: 0px;
+
+    /* Checkpicker label styling */
+    .checkpicker-label {
+      margin-left: 10px;
+      font-size: 1em;
+    }
+
+    /* Checkpicker styling */
+    .checkpicker {
+      position: relative;
+      width: 40px;
+      height: 20px;
+    }
+  }
+
+  .checkpicker-container:hover {
+    background-color: #4764cd8b;
+    border: none;
+    outline: none;
+  }
+
+  .checkpicker-container:focus {
+    outline: none;
+  }
+
+  .checkpicker-container-selected {
+    background-color: #4764cd8b;
+  }
+
+  .checkpicker-container-unselected {
+    background-color: none;
+  }
+}
+
+.sm-max-width {
+  max-width: 70px;
+}
+.md-max-width {
+  max-width: 120px;
+}
+.lg-max-width {
+  max-width: 200px;
+}
+.xl-max-width {
+  max-width: 320px;
+}
+.xxl-max-width {
+  max-width: 320px;
+}
+.full-max-width {
+  max-width: 320px;
+}
