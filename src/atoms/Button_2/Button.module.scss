@@ -1,100 +1,97 @@
 @use '../../assets/functions' as *;
 @use '../../assets/varibales' as *;
+@import '../../assets/common';
 
 // Button default style
 .button{
-  background-color: coloring(white);
-  border-radius: sizing(xs);
-  padding-left: sizing(lg);
-  padding-right: sizing(lg);
-  padding-top: sizing(md);
-  padding-bottom: sizing(md);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
   &:hover {
     cursor: pointer;
   }
 }
 
-// Common props css
-@each $size in $sizes {
-    // Width classes
-    .width-#{$size} {
-        width: sizing($size);
+// Button appearence style
+.appearence-default {
+    background-color: coloring(lowlight);
+    border-color: coloring(headings);
+    border-width: sizing(xs);
+    border-style: solid;
+
+    &:hover {
+        background-color: coloring(headings);
+    }
+}
+
+.appearence-primary {
+    background-color: coloring(primary);
+    border-color: coloring(primary);
+    border-width: sizing(xs);
+    border-style: solid;
+
+    &:hover {
+        background-color: coloring(strokes);
+    }
+}
+
+.appearence-link {
+    background-color: coloring("white");
+    border-color: coloring("white");
+    border-width: sizing(s);
+    border-style: solid;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.appearence-subtle {
+    background-color: coloring("white");
+    border-color: coloring(lowlight);
+    border-width: sizing(xs);
+    border-style: solid;
+
+    &:hover {
+        background-color: coloring(strokes);
+    }
+}
+
+.appearence-ghost {
+    background-color: coloring("white");
+    border-color: coloring(primary);
+    border-width: sizing(xs);
+    border-style: solid;
+
+    &:hover {
+        background-color: coloring(lowlight);
+    }
+}
+
+.loading {
+    height: 15px;
+    width: 15px;
+    border-width: sizing(sm);
+    border-style: solid;
+    border-color: coloring(subtitles);
+    border-top-color: coloring(primary);
+    border-radius: 100%;
+    display: inline-block;
+    animation-name: spinLoading;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    margin: 5px;
+}
+
+@keyframes spinLoading {
+    from {
+        transform: rotate(0);
     }
 
-    .width-fit-content {
-        width: fit-content;
-    }
-
-    // Max width classes
-    .max-width-#{$size} {
-        max-width: sizing($size);
-    }
-
-    // Min width classes
-    .min-width-#{$size} {
-        min-width: sizing($size);
-    }
-
-    // Height classes
-    .height-#{$size} {
-        height: sizing($size);
-    }
-
-    .height-fit-content {
-        height: fit-content;
-    }
-
-    // Max height classes
-    .max-height-#{$size} {
-        max-height: sizing($size);
-    }
-
-    // Min height classes
-    .min-height-#{$size} {
-        min-height: sizing($size);
-    }
-
-    // Margin classes
-    .margin-#{$size} {
-        margin: sizing($size);
-    }
-
-    .margin-top-#{$size} {
-        margin-top: sizing($size);
-    }
-
-    .margin-bottom-#{$size} {
-        margin-bottom: sizing($size);
-    }
-
-    .margin-left-#{$size} {
-        margin-left: sizing($size);
-    }
-
-    .margin-right-#{$size} {
-        margin-right: sizing($size);
-    }
-
-    // Padding classes
-    .padding-#{$size} {
-        padding: sizing($size);
-    }
-
-    .padding-top-#{$size} {
-        padding-top: sizing($size);
-    }
-
-    .padding-bottom-#{$size} {
-        padding-bottom: sizing($size);
-    }
-
-    .padding-left-#{$size} {
-        padding-left: sizing($size);
-    }
-
-    .padding-right-#{$size} {
-        padding-right: sizing($size);
+    to {
+        transform: rotate(360deg);
     }
 }
 

@@ -27,7 +27,7 @@ export interface AnimationEventProps {
 
 export type PickerAppearance = "default" | "subtle";
 
-export type ToArray<V> = V extends any[] ? V : V[];
+// export type ToArray<V> = V extends any[] ? V : V[];
 
 export type Styleguide =
   | "heading1"
@@ -59,31 +59,52 @@ export type AlignType = "top" | "middle" | "bottom";
 
 export type BorderStyleType = "dotted" | "dashed" | "solid" | "double";
 
+export type AppearenceType =
+  | "default"
+  | "primary"
+  | "link"
+  | "subtle"
+  | "ghost";
+
 export type DisplayType = "inline" | "block" | "inline-block";
 
 export type PositionType = "relative" | "absolute";
 
-export type Colors = "primary" | "subtitles" | "headings" | "white" | "lowlight" | "strokes" | "placeholder";
+export type Colors =
+  | "primary"
+  | "subtitles"
+  | "headings"
+  | "white"
+  | "lowlight"
+  | "strokes"
+  | "placeholder";
 
 export type Sizes = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "full";
 
-export type DegSizes = "tri" | "quad" | "hex" | "right" | "dozen" | "quarterAndHalf" | "full";  //0deg, 45deg, 60deg, 90deg, 120deg, 135deg ,180deg
+export type DegSizes =
+  | "tri"
+  | "quad"
+  | "hex"
+  | "right"
+  | "dozen"
+  | "quarterAndHalf"
+  | "full"; //0deg, 45deg, 60deg, 90deg, 120deg, 135deg ,180deg
 
 export interface CommmonProps extends React.HTMLAttributes<HTMLElement> {
-    height?: Sizes | "fit-content";
-    width?: Sizes | "fit-content";
-    maxHeight?: Sizes
-    minHeight?: Sizes
-    minWidth?: Sizes
-    maxWidth?: Sizes
-    margin?: Sizes;
-    marginTop?: Sizes;
-    marginBottom?: Sizes;
-    marginLeft?: Sizes;
-    marginRight?: Sizes;
-    padding?: Sizes;
-    paddingTop?: Sizes;
-    paddingBottom?: Sizes;
-    paddingLeft?: Sizes;
-    paddingRight?: Sizes;
+  height?: Sizes | "fit-content";
+  width?: Sizes | "fit-content";
+  maxHeight?: Sizes;
+  minHeight?: Sizes;
+  minWidth?: Sizes;
+  maxWidth?: Sizes;
+  margin?: Sizes;
+  marginTop?: Sizes;
+  marginBottom?: Sizes;
+  marginLeft?: Sizes;
+  marginRight?: Sizes;
+  padding?: Sizes;
+  paddingTop?: Sizes;
+  paddingBottom?: Sizes;
+  paddingLeft?: Sizes;
+  paddingRight?: Sizes;
 }
