@@ -79,15 +79,6 @@ export type Colors =
 
 export type Sizes = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "full";
 
-export type DegSizes =
-  | "tri"
-  | "quad"
-  | "hex"
-  | "right"
-  | "dozen"
-  | "quarterAndHalf"
-  | "full"; //0deg, 45deg, 60deg, 90deg, 120deg, 135deg ,180deg
-
 export interface CommmonProps extends React.HTMLAttributes<HTMLElement> {
   height?: Sizes | "fit-content";
   width?: Sizes | "fit-content";
@@ -96,13 +87,8 @@ export interface CommmonProps extends React.HTMLAttributes<HTMLElement> {
   minWidth?: Sizes;
   maxWidth?: Sizes;
   margin?: Sizes;
-  marginTop?: Sizes;
-  marginBottom?: Sizes;
-  marginLeft?: Sizes;
-  marginRight?: Sizes;
-  padding?: Sizes;
-  paddingTop?: Sizes;
-  paddingBottom?: Sizes;
-  paddingLeft?: Sizes;
-  paddingRight?: Sizes;
+  mt?: Sizes;
+  mb?: Sizes;
+  ml?: Sizes;
+  mr?: Sizes;
 }

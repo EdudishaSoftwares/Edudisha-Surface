@@ -1,21 +1,13 @@
-import { Colors, CommmonProps, BorderStyleType, AppearenceType, Sizes } from "../../typings";
+import { CommmonProps, AppearenceType, Sizes} from "../../typings";
 
 export interface ButtonProps extends CommmonProps {
     // active?: boolean;
     appearence?: AppearenceType;
-    backgroundColor?: Colors;
-    color?: Colors;
+    size?: Sizes;
     disabled?: boolean;
     loading?: boolean;
     startIcon?: React.ReactNode;
     endIcon?: React.ReactNode;
-    borderStyle?: BorderStyleType;
-    borderWidth?: Sizes;
-    borderColor?: Colors;
-    borderRadius?: Sizes;
-    onHoverBackgroundColor?: Colors;
-    onHoverBorderColor?: Colors;
-    onHoverColor?: Colors;
-    onHoverScaleUp?: boolean;
-    onHoverTootltip?: React.ReactNode;
+    toolTip?: React.ReactNode;
+    // ripple
 }

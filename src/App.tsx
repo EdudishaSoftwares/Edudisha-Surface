@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <div>
-        <Button_2 appearence="ghost" loading>
+        <Button_2 appearence="ghost" loading disabled>
           Button
         </Button_2>
       </div>

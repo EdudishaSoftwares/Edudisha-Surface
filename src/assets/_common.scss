@@ -1,4 +1,4 @@
-@use './functions' as *;
+@use './sizing' as *;
 @use './varibales' as *;
 
 // Common props css
@@ -52,27 +52,6 @@
 
     .margin-right-#{$size} {
         margin-right: sizing($size);
-    }
-
-    // Padding classes
-    .padding-#{$size} {
-        padding: sizing($size);
-    }
-
-    .padding-top-#{$size} {
-        padding-top: sizing($size);
-    }
-
-    .padding-bottom-#{$size} {
-        padding-bottom: sizing($size);
-    }
-
-    .padding-left-#{$size} {
-        padding-left: sizing($size);
-    }
-
-    .padding-right-#{$size} {
-        padding-right: sizing($size);
     }
 }
 
