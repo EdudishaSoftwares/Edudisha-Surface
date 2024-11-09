@@ -5,7 +5,7 @@ import style from "./CheckboxGroup.module.scss";
 import classNames from "classnames/bind";
 const cx = classNames.bind(style);
 
-const CheckboxGroup = (props : CheckboxGroupProps) => {
+const CheckboxGroup = (props: CheckboxGroupProps) => {
   const {
     options,
     active: initialActive,
@@ -13,9 +13,10 @@ const CheckboxGroup = (props : CheckboxGroupProps) => {
     id,
     inline = false,
     ...rest
-  } = props
+  } = props;
 
-  const [active, setActive] = React.useState<(number | string)[]>(initialActive);
+  const [active, setActive] =
+    React.useState<(number | string)[]>(initialActive);
 
   React.useEffect(() => {
     setActive(initialActive);
@@ -26,8 +27,7 @@ const CheckboxGroup = (props : CheckboxGroupProps) => {
 
     if (event.target.checked) {
       updatedActive.push(event.target.name);
-    }
-    else {
+    } else {
       const index = updatedActive.indexOf(event.target.name);
       if (index > -1) updatedActive.splice(index, 1);
     }

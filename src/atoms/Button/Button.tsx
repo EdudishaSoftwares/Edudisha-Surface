@@ -33,7 +33,7 @@ const Button = (props: ButtonProps) => {
       style={style}
       className={cx(
         className,
-        'button',
+        "button",
         `${margin ? `margin-${margin}` : ""}`,
         `${mt ? `margin-top-${mt}` : ""}`,
         `${mb ? `margin-bottom-${mb}` : ""}`,

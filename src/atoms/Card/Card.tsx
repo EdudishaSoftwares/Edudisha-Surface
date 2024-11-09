@@ -37,7 +37,7 @@ const Card = (props: React.PropsWithChildren<CardProps>): JSX.Element => {
         `${noShadow ? `no-shadow` : ""}`,
         `${noPadding ? `no-padding` : ""}`,
         `${noHorizontalPadding ? `no-horizontal-padding` : ""}`,
-        `${noVerticalPadding ? `no-vertical-padding` : ""}`,
+        `${noVerticalPadding ? `no-vertical-padding` : ""}`
       )}
       {...rest}
     >

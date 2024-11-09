@@ -29,7 +29,7 @@ const LinkText: React.FC<LinkProps> = ({
           `${mt ? `margin-top-${mt}` : ""}`,
           `${mb ? `margin-bottom-${mb}` : ""}`,
           `${ml ? `margin-left-${ml}` : ""}`,
-          `${mr ? `margin-right-${mr}` : ""}`,
+          `${mr ? `margin-right-${mr}` : ""}`
         )}
         onClick={onClick}
         href={to as string}
@@ -41,10 +41,7 @@ const LinkText: React.FC<LinkProps> = ({
     );
   return (
     <Link
-      className={cx(
-        className,
-        "routing-link",
-      )}
+      className={cx(className, "routing-link")}
       to={to}
       onClick={onClick}
       target={target}

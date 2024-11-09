@@ -18,7 +18,13 @@ function App() {
         {/* <CheckboxGroup options={["one", "one","two", "three", "four"]} active={["one", "two"]} onChange={handleChange} id="test"></CheckboxGroup> */}
         {/* <DropDown multiSelect={false} title="test" size="xl" maxWidth="xxl" data={[{label:"one", value:"1"},{label:"two", value:"2"}]}></DropDown> */}
         {/* <Label type="primary" label="Check" state="success" /> */}
-        <LinkText relative="full" to="google.com" > <Text styleguide="body1" underlineOnHover> Link </Text> </LinkText>
+        <LinkText relative="full" to="google.com">
+          {" "}
+          <Text styleguide="body1" underlineOnHover>
+            {" "}
+            Link{" "}
+          </Text>{" "}
+        </LinkText>
       </div>
     </>
   );

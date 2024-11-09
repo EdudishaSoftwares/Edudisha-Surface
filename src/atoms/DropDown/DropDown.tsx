@@ -53,12 +53,10 @@ const DropDown = (props: DropDownProps) => {
       const newData = dropDownData.map((el) => {
         if (el.value === value) {
           return { ...el, isChecked };
-        }
-        else {
+        } else {
           if (multiSelect) {
             return el;
-          }
-          else {
+          } else {
             return {
               ...el,
               isChecked: false,
