@@ -1,6 +1,7 @@
 import { LinkProps, RelativeRoutingType } from "react-router-dom"
+import { CommmonProps } from "../../typings";
 
-export type LinkProps = Omit<LinkProps, 'relative'> & {
+export type LinkProps = Omit<LinkProps, 'relative'> & CommmonProps &{
   relative: RelativeRoutingType | 'full',
-  underline?: boolean;
+  onClick?: (event: React.SyntheticEvent) => void;
 }

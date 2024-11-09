@@ -4,31 +4,21 @@ import style from "./Text.module.scss";
 import classNames from "classnames/bind";
 const cx = classNames.bind(style);
 
-const styleguideToHTMLMapper = {
-  heading1: "h1",
-  heading2: "h2",
-  heading3: "h3",
-  heading4: "h4",
-  heading5: "h5",
-  heading6: "h6",
-  heading7: "p",
-  body1: "p",
-  body2: "p",
-  body3: "p",
-};
-
 const Text = (props: PropsWithChildren<TextProps>): JSX.Element => {
   const {
     as,
-    color,
-    styleguide,
-    children,
-    underline = false,
-    strikeThrough = false,
+    margin,
     mt,
     mb,
     ml,
     mr,
+    fontWeight,
+    color,
+    styleguide,
+    children,
+    underline = false,
+    underlineOnHover = false,
+    strikeThrough = false,
     ellipsis = false,
     ellipsisClamp,
     copiable,
@@ -38,21 +28,22 @@ const Text = (props: PropsWithChildren<TextProps>): JSX.Element => {
     ...rest
   } = props;
 
-  const As = as
-    ? as
-    : styleguideToHTMLMapper[styleguide] || ("p" as React.ElementType);
+  const As = as ? as : ("p" as React.ElementType);
 
   const Child = (
     <As
       className={cx([
+        `${margin ? `margin-${margin}` : ""}`,
+        `${mt ? `margin-top-${mt}` : ""}`,
+        `${mb ? `margin-bottom-${mb}` : ""}`,
+        `${ml ? `margin-left-${ml}` : ""}`,
+        `${mr ? `margin-right-${mr}` : ""}`,
         styleguide,
+        `${fontWeight ? `font-weight-${fontWeight}` : ""}`,
         `${color ? `${color}-colored` : ""}`,
         `${underline ? "underline" : ""}`,
+        `${underlineOnHover ? "underlineOnHover" : ""}`,
         `${strikeThrough ? "strike-through" : ""}`,
-        `${ml ? `ml-${ml}` : ""}`,
-        `${mr ? `mr-${mr}` : ""}`,
-        `${mt ? `mt-${mt}` : ""}`,
-        `${mb ? `mb-${mb}` : ""}`,
         `${ellipsis ? "ellipsis" : ""}`,
         `${copiable ? "cursor-pointer" : ""}`,
         `${breakWord ? "break-word" : ""}`,

@@ -15,6 +15,11 @@ interface FlexboxGridComponent
 const FlexboxGrid = React.forwardRef<HTMLDivElement, FlexboxGridProps>(
   (
     {
+      margin,
+      mt,
+      mb,
+      ml,
+      mr,
       as: Component = "div",
       className,
       align = "top",
@@ -26,6 +31,11 @@ const FlexboxGrid = React.forwardRef<HTMLDivElement, FlexboxGridProps>(
   ) => {
     const classes = cx(
       className,
+      `${margin ? `margin-${margin}` : ""}`,
+      `${mt ? `margin-top-${mt}` : ""}`,
+      `${mb ? `margin-bottom-${mb}` : ""}`,
+      `${ml ? `margin-left-${ml}` : ""}`,
+      `${mr ? `margin-right-${mr}` : ""}`,
       "flex-box-grid",
       `flex-box-grid-${align}`,
       `flex-box-grid-${justify}`,

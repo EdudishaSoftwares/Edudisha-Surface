@@ -1,3 +1,6 @@
-import React from "react";
+import { CommmonProps } from "../../typings";
 
-export type ImageProps = React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>;
+export interface ImageProps extends CommmonProps{
+    src: string;
+    alt: string;
+}

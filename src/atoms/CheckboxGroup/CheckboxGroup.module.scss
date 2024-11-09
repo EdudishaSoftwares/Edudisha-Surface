@@ -16,10 +16,10 @@
 
             &:checked+ {
                 .label {
-                    color: #777;
+                    color: var(--black);
 
                     &:before {
-                        color: #fff;
+                        color: var(--white);
                         border-style: solid;
                         width: 10px;
                         height: 5px;
@@ -34,8 +34,8 @@
                     }
 
                     &:after {
-                        background: #5643fa;
-                        border-color: #5643fa;
+                        background: var(--indigo);
+                        border-color: var(--indigo);
                     }
                 }
             }
@@ -50,14 +50,14 @@
             overflow: hidden;
             text-overflow: ellipsis;
             cursor: pointer;
-            color: #777;
+            color: var(--black);
 
             &:after {
                 content: '';
                 display: inline-block;
                 width: 15px;
                 height: 15px;
-                border: 1px solid #5643fa;
+                border: 1px solid var(--indigo);
                 position: absolute;
                 left: 0;
                 bottom: 0;

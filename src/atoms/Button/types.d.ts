@@ -9,5 +9,10 @@ export interface ButtonProps extends CommmonProps {
     startIcon?: React.ReactNode;
     endIcon?: React.ReactNode;
     toolTip?: React.ReactNode;
+    onClick?: () => void;
+    onMouseEnter?: (event: React.MouseEvent) => void;
+    onMouseLeave?: (event: React.MouseEvent) => void;
+    onMouseOverCapture?: (event: React.MouseEvent) => void;
+    onMouseOutCapture?: (event: React.MouseEvent) => void;
     // ripple
 }

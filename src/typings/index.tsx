@@ -27,17 +27,19 @@ export interface AnimationEventProps {
 
 export type PickerAppearance = "default" | "subtle";
 
-export type Styleguide =
+export type StyleGuide =
   | "heading1"
   | "heading2"
   | "heading3"
   | "heading4"
   | "heading5"
   | "heading6"
-  | "heading7"
   | "body1"
   | "body2"
-  | "body3";
+  | "body3"
+  | "body4"
+  | "body5"
+  | "body6";
 
 export type ValueType = string | number;
 
@@ -69,23 +71,31 @@ export type DisplayType = "inline" | "block" | "inline-block";
 export type PositionType = "relative" | "absolute";
 
 export type Colors =
-  | "primary"
-  | "subtitles"
-  | "headings"
+  | "violet"
+  | "purple"
+  | "purple-2"
+  | "indigo"
+  | "blue"
+  | "blue-1"
+  | "blue-2"
+  | "blue-3"
+  | "blue-4"
+  | "blue-5"
+  | "green"
+  | "green-2"
+  | "yellow"
+  | "orange"
+  | "red"
+  | "pink"
   | "white"
-  | "lowlight"
-  | "strokes"
-  | "placeholder";
+  | "grey"
+  | "grey-1"
+  | "grey-2"
+  | "black";
 
 export type Sizes = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "full";
 
 export interface CommmonProps extends React.HTMLAttributes<HTMLElement> {
-  height?: Sizes | "fit-content";
-  width?: Sizes | "fit-content";
-  maxHeight?: Sizes;
-  minHeight?: Sizes;
-  minWidth?: Sizes;
-  maxWidth?: Sizes;
   margin?: Sizes;
   mt?: Sizes;
   mb?: Sizes;

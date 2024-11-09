@@ -4,19 +4,35 @@ import classNames from "classnames/bind";
 import style from "./Link.module.scss";
 const cx = classNames.bind(style);
 
-const Link: React.FC<LinkProps> = ({
+const LinkText: React.FC<LinkProps> = ({
+  margin,
+  mt,
+  mb,
+  ml,
+  mr,
   relative = "full",
-  underline = true,
-  rest,
+  to,
   target,
   download,
   children,
+  className,
+  onClick,
+  ...rest
 }) => {
   if (relative === "full")
     return (
       <a
-        className={underline ? cx(`underline`) : ``}
-        href={rest.to as string}
+        className={cx(
+          className,
+          "anchor-link",
+          `${margin ? `margin-${margin}` : ""}`,
+          `${mt ? `margin-top-${mt}` : ""}`,
+          `${mb ? `margin-bottom-${mb}` : ""}`,
+          `${ml ? `margin-left-${ml}` : ""}`,
+          `${mr ? `margin-right-${mr}` : ""}`
+        )}
+        onClick={onClick}
+        href={to as string}
         target={target}
         download={download}
       >
@@ -25,7 +41,9 @@ const Link: React.FC<LinkProps> = ({
     );
   return (
     <Link
-      className={underline ? cx(`underline`) : ``}
+      className={cx(className, "routing-link")}
+      to={to}
+      onClick={onClick}
       target={target}
       children={children}
       {...rest}
@@ -33,4 +51,4 @@ const Link: React.FC<LinkProps> = ({
   );
 };
 
-export default Link;
+export default LinkText;

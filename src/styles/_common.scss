@@ -1,0 +1,25 @@
+@use './marginPaddingSizing' as *;
+@use './varibales' as *;
+
+// Common props css
+@each $size in $sizes {
+    .margin-#{$size} {
+        margin: marginPaddingSizing($size);
+    }
+
+    .margin-top-#{$size} {
+        margin-top: marginPaddingSizing($size);
+    }
+
+    .margin-bottom-#{$size} {
+        margin-bottom: marginPaddingSizing($size);
+    }
+
+    .margin-left-#{$size} {
+        margin-left: marginPaddingSizing($size);
+    }
+
+    .margin-right-#{$size} {
+        margin-right: marginPaddingSizing($size);
+    }
+}

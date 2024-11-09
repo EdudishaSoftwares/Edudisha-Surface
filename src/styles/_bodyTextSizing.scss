@@ -1,17 +1,17 @@
-// size mapping function
-@function sizing($size) {
+// bbody text size mapping function
+@function bodyTextsizing($size) {
     @if $size == xs {
-        @return 0.5rem;
-    } @else if $size == sm {
-        @return 0.5rem;
-    } @else if $size == md {
         @return 0.75rem;
-    } @else if $size == lg {
+    } @else if $size == sm {
+        @return 0.875rem;
+    } @else if $size == md {
         @return 1rem;
+    } @else if $size == lg {
+        @return 1.125rem;
     } @else if $size == xl {
         @return 1.5rem;
     } @else if $size == xxl {
-        @return 10rem;
+        @return 2rem;
     } @else if $size == full {
         @return 100%;
     }

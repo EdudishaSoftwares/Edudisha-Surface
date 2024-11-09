@@ -1,3 +1,7 @@
+@use '../../styles/varibales';
+@use '../../styles/marginPaddingSizing';
+@use '../../styles/common';
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -32,62 +36,6 @@
   flex-wrap: nowrap;
 }
 
-.mt-xs {
-  margin-top: spacing(xs)
-}
-
-.mt-sm {
- margin-top: spacing(sm)
-}
-
-.mt-md {
- margin-top: spacing(md)
-}
-
-.mt-lg {
- margin-top: spacing(lg)
-}
-
-.mt-xl {
- margin-top: spacing(xl)
-}
-
-.mt-xxl {
-  margin-top: spacing(xxl)
-}
-
-.mt-full {
-  margin-top: spacing(full)
-}
-
-.mb-xs {
- margin-bottom: spacing(xs)
-}
-
-.mb-sm {
- margin-bottom: spacing(sm)
-}
-
-.mb-md {
- margin-bottom: spacing(md)
-}
-
-.mb-lg {
- margin-bottom: spacing(lg) 
-}
-
-.mb-xl {
- margin-bottom: spacing(xl)
-}
-
-.mb-xxl {
-  margin-bottom: spacing(xxl)
-}
-
-.mb-full {
-  margin-bottom: spacing(full)
-}
-
 .gutter-xs {
   margin-left: -2px;
   margin-right: -2px;
@@ -104,8 +52,8 @@
 }
 
 .gutter-sm > div {
-  padding-left: spacing(xs);
-  padding-right: spacing(xs);
+  padding-left: marginPaddingSizing(xs);
+  padding-right: marginPaddingSizing(xs);
 }
 
 .gutter-md {
@@ -114,8 +62,8 @@
 }
 
 .gutter-md > div {
-  padding-left: spacing(md);
-  padding-right: spacing(md);
+  padding-left: marginPaddingSizing(md);
+  padding-right: marginPaddingSizing(md);
 }
 
 .gutter-lg {
@@ -124,8 +72,8 @@
 }
 
 .gutter-lg > div {
-  padding-left: spacing(sm);
-  padding-right: spacing(sm);
+  padding-left: marginPaddingSizing(sm);
+  padding-right: marginPaddingSizing(sm);
 }
 
 .gutter-xl {
@@ -134,6 +82,16 @@
 }
 
 .gutter-xl > div {
-  padding-left: spacing(md);
-  padding-right: spacing(md);
+  padding-left: marginPaddingSizing(md);
+  padding-right: marginPaddingSizing(md);
+}
+
+.gutter-xl {
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.gutter-xl > div {
+  padding-left: marginPaddingSizing(xl);
+  padding-right: marginPaddingSizing(xl);
 }

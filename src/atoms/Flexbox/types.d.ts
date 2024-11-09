@@ -1,8 +1,8 @@
 import React from "react";
 import { FlexboxGridProps } from "../../atoms/FlexboxGrid";
-import { Sizes } from "../../typings/index";
+import { CommmonProps, Sizes } from "../../typings/index";
 
-export type FlexboxComponentProps = Omit<FlexboxGridProps, "align"> & {
+export type FlexboxComponentProps = Omit<FlexboxGridProps, "align"> & CommmonProps & {
   direction: "row" | "column";
   nowrap?: boolean;
   onClick?: () => void;
