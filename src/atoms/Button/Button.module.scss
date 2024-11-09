@@ -1,0 +1,125 @@
+@use '../../styles/borderRadiusSizing';
+@use '../../styles/borderWidthSizing';
+@use '../../styles/marginPaddingSizing';
+@use '../../styles/common';
+
+// Button default style
+.button{
+    all: unset;
+    outline: revert;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: borderRadiusSizing(xs);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: revert;
+  }
+}
+
+.appearence-default {
+    background-color: var(--grey-2);
+    color: black;
+    &:hover {
+        background-color: var(--grey-1);
+    }
+}
+
+.appearence-primary {
+    background-color: var(--blue-2);
+    color: var(--white);
+
+    &:hover {
+        background-color: var(--blue-1);
+    }
+}
+
+.appearence-link {
+    color: var(--blue);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.appearence-subtle {
+    &:hover {
+        background-color: var(--grey-1);
+    }
+}
+
+.appearence-ghost {
+    border-color: var(--blue);
+    border-width: 1px;
+    border-style: solid;
+    color: var(--blue);
+
+    &:hover {
+        border-width: 2px;
+        border-color: var(--blue);
+    }
+}
+
+.size-xs {
+    padding: 0 marginPaddingSizing(xs);
+}
+
+.size-xs {
+    padding: marginPaddingSizing(xs) marginPaddingSizing(sm);
+}
+
+.size-md {
+    padding: marginPaddingSizing(sm) marginPaddingSizing(md);
+}
+
+.size-lg {
+    padding: marginPaddingSizing(md) marginPaddingSizing(lg);
+}
+
+.size-xl {
+    padding: marginPaddingSizing(md) marginPaddingSizing(xl);
+}
+
+.size-xxl {
+    padding: marginPaddingSizing(xl) marginPaddingSizing(xxl);
+}
+
+.size-full {
+    padding: marginPaddingSizing(full);
+}
+
+.loading {
+    height: 15px;
+    width: 15px;
+    border-width: borderWidthSizing(sm);
+    border-style: solid;
+    border-color: var(--subtitles);
+    border-top-color: var(--primary);
+    border-radius: 100%;
+    display: inline-block;
+    animation-name: spinLoading;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    margin: 5px;
+}
+
+@keyframes spinLoading {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.disabled {
+    &:hover {
+        cursor: no-drop;
+    }
+}

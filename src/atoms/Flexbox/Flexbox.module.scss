@@ -1,0 +1,97 @@
+@use '../../styles/varibales';
+@use '../../styles/marginPaddingSizing';
+@use '../../styles/common';
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-top {
+  align-items: flex-start;
+}
+
+.align-bottom {
+  align-items: flex-end;
+}
+
+.align-middle {
+  align-items: center;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.align-end {
+  align-items: end;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.gutter-xs {
+  margin-left: -2px;
+  margin-right: -2px;
+}
+
+.gutter-xs > div {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.gutter-sm {
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+.gutter-sm > div {
+  padding-left: marginPaddingSizing(xs);
+  padding-right: marginPaddingSizing(xs);
+}
+
+.gutter-md {
+  margin-left: -6px;
+  margin-right: -6px;
+}
+
+.gutter-md > div {
+  padding-left: marginPaddingSizing(md);
+  padding-right: marginPaddingSizing(md);
+}
+
+.gutter-lg {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.gutter-lg > div {
+  padding-left: marginPaddingSizing(sm);
+  padding-right: marginPaddingSizing(sm);
+}
+
+.gutter-xl {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.gutter-xl > div {
+  padding-left: marginPaddingSizing(md);
+  padding-right: marginPaddingSizing(md);
+}
+
+.gutter-xl {
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.gutter-xl > div {
+  padding-left: marginPaddingSizing(xl);
+  padding-right: marginPaddingSizing(xl);
+}

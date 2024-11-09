@@ -1,0 +1,45 @@
+@use '../../styles/marginPaddingSizing';
+@use '../../styles/borderRadiusSizing';
+@use '../../styles/common';
+@use '../../styles/varibales';
+
+// Card Styles
+.card {
+  background-color: var(--white);
+  border-radius: borderRadiusSizing(sm);
+  padding-left: spacing(lg);
+  padding-right: spacing(lg);
+  padding-top: spacing(md);
+  padding-bottom: spacing(md);
+
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-shadow {
+  box-shadow: none;
+}
+
+.no-horizontal-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.no-vertical-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@each $size in $sizes {
+  .padding-horizontal-#{$size} {
+    padding-left: marginPaddingSizing($size);
+    padding-right: marginPaddingSizing($size);
+  }
+
+  .padding-vertical-#{$size} {
+    padding-top: marginPaddingSizing($size);
+    padding-bottom: marginPaddingSizing($size);
+  }
+}

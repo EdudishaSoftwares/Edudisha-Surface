@@ -1,0 +1,69 @@
+@use '../../styles/common';
+
+.flex-box-grid {
+    display: flex;
+    flex-flow: row wrap;
+
+    // Flex-box grid item
+    &-item {
+        flex: 0 0 auto;
+    }
+
+    &-direction-row {
+        flex-direction: row;
+    }
+
+    &-direction-column {
+        flex-direction: column;
+    }
+
+    // Alignment (Y-Axis)
+    &-top {
+        align-items: flex-start;
+    }
+
+    &-middle {
+        align-items: center;
+    }
+
+    &-bottom {
+        align-items: flex-end;
+    }
+
+    // Layout (X-Axis)
+    &-start {
+        justify-content: flex-start;
+    }
+
+    &-center {
+        justify-content: center;
+    }
+
+    &-end {
+        justify-content: flex-end;
+    }
+
+    &-space-between {
+        justify-content: space-between;
+    }
+
+    &-space-around {
+        justify-content: space-around;
+    }
+}
+
+@for $i from 1 through 24 {
+
+    // Generate column styles
+    .flex-box-grid-item-#{$i} {
+        position: relative;
+        display: block;
+        min-height: 1px;
+        width: percentage($i / 24);
+    }
+
+    // Generate order styles
+    .flex-box-grid-item-order-#{$i} {
+        order: $i;
+    }
+}

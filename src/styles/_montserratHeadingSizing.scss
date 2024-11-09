@@ -1,0 +1,20 @@
+// montserrat heading size mapping function
+@function montserratHeadingSizing($size) {
+    @if $size == xs {
+        @return 1rem;
+    } @else if $size == sm {
+        @return 1.5rem;
+    } @else if $size == md {
+        @return 2rem;
+    } @else if $size == lg {
+        @return 2.25rem;
+    } @else if $size == xl {
+        @return 2.5rem;
+    } @else if $size == xxl {
+        @return 3rem;
+    } @else if $size == full {
+        @return 100%;
+    }
+
+    @return null;
+}

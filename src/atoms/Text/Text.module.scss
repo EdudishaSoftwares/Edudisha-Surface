@@ -1,0 +1,195 @@
+@use '../../styles/common';
+@use '../../styles/montserratHeadingSizing';
+@use '../../styles/hedingSizing';
+@use '../../styles/bodyTextSizing';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'Inter';
+}
+
+.montserratHeading6 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: bold;
+    font-family:'Montserrat';
+}
+
+.montserratHeading5 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: bold;
+    font-family:'Montserrat';
+}
+
+.montserratHeading4 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    font-weight: bold;
+    font-family:'Montserrat';
+}
+
+.montserratHeading3 {
+    font-size: 2.25rem;
+    line-height: 2.5;
+    font-weight: bold;
+    font-family:'Montserrat';
+}
+
+.montserratHeading2 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    font-weight: bold;
+    font-family:'Montserrat';
+}
+
+.montserratHeading1 {
+    font-size: 3rem;
+    line-height: 3.375rem;
+    font-weight: bold;
+    font-family:'Montserrat';
+}
+
+.heading6 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: bold;
+}
+
+.heading5 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: bold;
+}
+
+.heading4 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    font-weight: bold;
+}
+
+.heading3 {
+    font-size: 2.25rem;
+    line-height: 2.5;
+    font-weight: bold;
+}
+
+.heading2 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    font-weight: bold;
+}
+
+.heading1 {
+    font-size: 3rem;
+    line-height: 3.375rem;
+    font-weight: bold;
+}
+
+.body6 {
+    font-size: 0.75rem;
+    line-height: 0.85rem;
+}
+
+.body5 {
+    font-size: 0.875rem;
+    line-height: 1rem;
+}
+
+.body4 {
+    font-size: 1rem;
+    line-height: 1.125rem;
+}
+
+.body3 {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+}
+
+.body2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.body1 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.underlineOnHover {
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.strike-through {
+    text-decoration: line-through;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: initial;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.break-word {
+    white-space: break-spaces;
+}
+
+.text-transform-capitalize {
+    text-transform: capitalize;
+}
+
+.text-transform-lowercase {
+    text-transform: lowercase;
+}
+
+.text-transform-uppercase {
+    text-transform: uppercase;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.font-weight-thin {
+    font-weight: 300;
+}
+
+.font-weight-regular {
+    font-weight: 400;
+}
+
+.font-weight-medium {
+    font-weight: 500;
+}
+
+.font-weight-semiBold {
+    font-weight: 600;
+}
+
+.font-weight-semiBold {
+    font-weight: 700;
+}
+
+.font-weight-semiBold {
+    font-weight: 800;
+}
