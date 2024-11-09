@@ -6,6 +6,11 @@ const cx = classNames.bind(style);
 
 const Card = (props: React.PropsWithChildren<CardProps>): JSX.Element => {
   const {
+    margin,
+    ml,
+    mr,
+    mt,
+    mb,
     children,
     noPadding,
     noShadow,
@@ -14,8 +19,6 @@ const Card = (props: React.PropsWithChildren<CardProps>): JSX.Element => {
     paddingVertical,
     noHorizontalPadding,
     noVerticalPadding,
-    mt,
-    mb,
     ...rest
   } = props;
 
@@ -24,14 +27,17 @@ const Card = (props: React.PropsWithChildren<CardProps>): JSX.Element => {
       className={cx(
         className,
         `card`,
+        `${margin ? `margin-${margin}` : ""}`,
+        `${mt ? `margin-top-${mt}` : ""}`,
+        `${mb ? `margin-bottom-${mb}` : ""}`,
+        `${ml ? `margin-left-${ml}` : ""}`,
+        `${mr ? `margin-right-${mr}` : ""}`,
         `${paddingVertical ? `padding-vertical-${paddingVertical}` : ""}`,
         `${paddingHorizontal ? `padding-horizontal-${paddingHorizontal}` : ""}`,
         `${noShadow ? `no-shadow` : ""}`,
         `${noPadding ? `no-padding` : ""}`,
         `${noHorizontalPadding ? `no-horizontal-padding` : ""}`,
         `${noVerticalPadding ? `no-vertical-padding` : ""}`,
-        `${mt ? `mt-${mt}` : ""}`,
-        `${mb ? `mb-${mb}` : ""}`
       )}
       {...rest}
     >

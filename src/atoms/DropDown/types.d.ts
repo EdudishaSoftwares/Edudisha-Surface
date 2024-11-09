@@ -1,15 +1,14 @@
+import { CommmonProps, Sizes } from "../../typings";
+
 
 export type DropDownPropsData = { label: string; value: string };
 export type DropDownCheckedPropsData = { label: string; value: string; isChecked: boolean };
-import { Sizes } from "../../typings";
 
-type ButtonSize = "s" | "m" | "lg";
-
-export type DropDownProps = {
+export interface DropDownProps extends CommmonProps {
   data: DropDownPropsData[];
   multiSelect?: boolean;
   title?: string;
-  size?: ButtonSize;
+  size?: Sizes;
   maxWidth?: Sizes;
 }
 

@@ -1,27 +1,27 @@
-import { Colors, Sizes, Styleguide } from "../../typings/index";
 import React from "react";
-
-export type TextProps = {
-  as?: React.ElementType;
-  to?: string;
-  color?: Colors;
-  styleguide: Styleguide;
-  underline?: boolean;
-  strikeThrough?: boolean;
-  mt?: Sizes;
-  mb?: Sizes;
-  ml?: Sizes;
-  mr?: Sizes;
-  ellipsis?: boolean;
-  onClick?: (event: React.SyntheticEvent) => void;
-  copiable?: CopiableType;
-  breakWord?: boolean;
-  textTransform?: 'uppercase' | 'lowercase' | 'capitalize';
-  dangerouslySetInnerHTML?: { __html: string };
-  align?: 'left' | 'center' | 'right';
-  ellipsisClamp?: number;
-}
+import { Colors, CommmonProps, StyleGuide } from "../../typings/index";
 
 export type CopiableType = {
   text: string
+}
+
+export type FontWeightType = "thin" | "regular" | "medium" | "semiBold" | "bold" | "extrabold";
+
+export interface TextProps extends CommmonProps {
+  as?: React.ElementType;
+  to?: string;
+  fontWeight?: FontWeightType;
+  color?: Colors;
+  styleguide: StyleGuide;
+  underline?: boolean;
+  underlineOnHover?:boolean;
+  strikeThrough?: boolean;
+  ellipsis?: boolean;
+  copiable?: CopiableType;
+  breakWord?: boolean;
+  ellipsisClamp?: number;
+  dangerouslySetInnerHTML?: { __html: string };
+  textTransform?: 'uppercase' | 'lowercase' | 'capitalize';
+  align?: 'left' | 'center' | 'right';
+  onClick?: (event: React.SyntheticEvent) => void;
 }

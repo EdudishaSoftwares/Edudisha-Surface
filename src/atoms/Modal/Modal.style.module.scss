@@ -1,4 +1,5 @@
-@import '../../assets/spacings';
+@import '../../styles/borderRadiusSizing';
+@import '../../styles/marginPaddingSizing';
 
 .overlay {
     position: fixed;
@@ -6,7 +7,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: (rgba(0, 0, 0, 0.6));
     z-index: 9999;
 }
 
@@ -17,7 +18,7 @@
     width: 100%;
     min-width: 200px;
     margin: auto;
-    border-radius: spacing(sm);
+    border-radius: borderRadiusSizing(sm);
     background: #fff;
     box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.3);
     z-index: 100000;
@@ -103,7 +104,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: spacing(lg);
+    padding: marginPaddingSizing(lg);
     color: #000;
 }
 
@@ -126,13 +127,13 @@
 
 .modal-body {
     flex-grow: 1;
-    padding: spacing(lg);
+    padding: marginPaddingSizing(lg);
     overflow-y: auto;
     color: #000;
 }
 
 .modal-footer {
-    padding: spacing(lg);
+    padding: marginPaddingSizing(lg);
     display: flex;
     justify-content: flex-end;
     color: #000;

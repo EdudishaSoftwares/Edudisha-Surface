@@ -1,118 +1,45 @@
-@import '../../assets/spacings';
+@use '../../styles/marginPaddingSizing';
+@use '../../styles/borderRadiusSizing';
+@use '../../styles/common';
+@use '../../styles/varibales';
 
 // Card Styles
 .card {
   background-color: var(--white);
-  border-radius: 6px;
+  border-radius: borderRadiusSizing(sm);
   padding-left: spacing(lg);
   padding-right: spacing(lg);
   padding-top: spacing(md);
   padding-bottom: spacing(md);
 
-  &.no-padding {
-    padding: 0;
-  }
-
-  &.no-shadow {
-    box-shadow: none;
-  }
-
-  &.no-horizontal-padding {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  &.no-vertical-padding {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  // Horizontal Padding Classes
-  &.padding-horizontal-xs {
-    padding-left: spacing(xs);
-    padding-right: spacing(xs);
-  }
-
-  &.padding-horizontal-sm {
-    padding-left: spacing(sm);
-    padding-right: spacing(sm);
-  }
-
-  &.padding-horizontal-md {
-    padding-left: spacing(md);
-    padding-right: spacing(md);
-  }
-
-  &.padding-horizontal-lg {
-    padding-left: spacing(lg);
-    padding-right: spacing(lg);
-  }
-
-  &.padding-horizontal-xl {
-    padding-left: spacing(xl);
-    padding-right: spacing(xl);
-  }
-
-  &.padding-horizontal-xxl {
-    padding-left: spacing(xxl);
-    padding-right: spacing(xxl);
-  }
-
-  &.padding-horizontal-full {
-    padding-left: spacing(full);
-    padding-right: spacing(full);
-  }
-
-  // Vertical Padding Classes
-  &.padding-vertical-xs {
-    padding-top: spacing(xs);
-    padding-bottom: spacing(xs);
-  }
-
-  &.padding-vertical-sm {
-    padding-top: spacing(sm);
-    padding-bottom: spacing(sm);
-  }
-
-  &.padding-vertical-md {
-    padding-top: spacing(md);
-    padding-bottom: spacing(md);
-  }
-
-  &.padding-vertical-lg {
-    padding-top: spacing(lg);
-    padding-bottom: spacing(lg);
-  }
-
-  &.padding-vertical-xl {
-    padding-top: spacing(xl);
-    padding-bottom: spacing(xl);
-  }
-
-  &.padding-vertical-xxl {
-    padding-top: spacing(xxl);
-    padding-bottom: spacing(xxl);
-  }
-
-  &.padding-vertical-full {
-    padding-top: spacing(full);
-    padding-bottom: spacing(full);
-  }
 }
 
-// Margin Utility Classes (remain global)
-.mt-xs { margin-top: spacing(xs); }
-.mt-sm { margin-top: spacing(sm); }
-.mt-md { margin-top: spacing(md); }
-.mt-lg { margin-top: spacing(lg); }
-.mt-xl { margin-top: spacing(xl); }
-.mt-xl { margin-top: spacing(xxl); }
-.mt-xl { margin-top: spacing(full); }
+.no-padding {
+  padding: 0;
+}
 
-.mb-xs { margin-bottom: spacing(xs); }
-.mb-sm { margin-bottom: spacing(sm); }
-.mb-md { margin-bottom: spacing(md); }
-.mb-lg { margin-bottom: spacing(lg); }
-.mb-xl { margin-bottom: spacing(xl); }
-.mb-xl { margin-bottom: spacing(xxl); }
-.mb-xl { margin-bottom: spacing(full); }
+.no-shadow {
+  box-shadow: none;
+}
+
+.no-horizontal-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.no-vertical-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@each $size in $sizes {
+  .padding-horizontal-#{$size} {
+    padding-left: marginPaddingSizing($size);
+    padding-right: marginPaddingSizing($size);
+  }
+
+  .padding-vertical-#{$size} {
+    padding-top: marginPaddingSizing($size);
+    padding-bottom: marginPaddingSizing($size);
+  }
+}

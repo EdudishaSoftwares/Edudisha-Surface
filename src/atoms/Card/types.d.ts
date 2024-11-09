@@ -1,12 +1,10 @@
-import { Sizes } from "../../typings";
+import { CommmonProps, Sizes } from "../../typings";
 
-export type CardProps = React.HTMLAttributes<HTMLElement> & {
+export interface CardProps extends CommmonProps {
   noPadding?: boolean;
   noShadow?: boolean;
   noHorizontalPadding?: boolean;
   noVerticalPadding?: boolean;
   paddingVertical?: Sizes;
   paddingHorizontal?: Sizes;
-  mt?: Sizes;
-  mb?: Sizes;
 }

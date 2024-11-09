@@ -10,8 +10,11 @@ const Flexbox = (props: FlexboxComponentProps): JSX.Element => {
     direction,
     nowrap,
     className,
+    margin,
     mt,
     mb,
+    ml,
+    mr,
     align,
     gutter,
     ...rest
@@ -21,8 +24,11 @@ const Flexbox = (props: FlexboxComponentProps): JSX.Element => {
       direction={direction}
       className={cx(
         `${align ? `align-${align}` : ""}`,
-        `${mt ? `mt-${mt}` : ""}`,
-        `${mb ? `mb-${mb}` : ""}`,
+        `${margin ? `margin-${margin}` : ""}`,
+        `${mt ? `margin-top-${mt}` : ""}`,
+        `${mb ? `margin-bottom-${mb}` : ""}`,
+        `${ml ? `margin-left-${ml}` : ""}`,
+        `${mr ? `margin-right-${mr}` : ""}`,
         `${nowrap ? "nowrap" : ""}`,
         `${gutter ? `gutter-${gutter}` : ""}`,
         className

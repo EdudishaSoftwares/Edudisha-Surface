@@ -1,26 +1,29 @@
 // Modules
 import React from "react";
+
 // Atoms
 import Button from "../Button/Button";
 import OutsideClickHandler from "../OutsideClickHandler";
+import DownArrow from "../Icons/DownArrow";
+
 // Styles
 import classNames from "classnames/bind";
 import style from "./DropDown.module.scss";
 const cx = classNames.bind(style);
+
 // Types
 import {
   DropDownProps,
   DropDownItemProps,
   DropDownCheckedPropsData,
 } from "./types";
-import DownArrow from "../Icons/DownArrow";
 import { Sizes } from "../../typings";
 
 const DropDown = (props: DropDownProps) => {
   const {
     title = "",
     data,
-    size = "m",
+    size = "md",
     maxWidth = "md",
     multiSelect = false,
   } = props;
@@ -50,10 +53,12 @@ const DropDown = (props: DropDownProps) => {
       const newData = dropDownData.map((el) => {
         if (el.value === value) {
           return { ...el, isChecked };
-        } else {
+        }
+        else {
           if (multiSelect) {
             return el;
-          } else {
+          }
+          else {
             return {
               ...el,
               isChecked: false,

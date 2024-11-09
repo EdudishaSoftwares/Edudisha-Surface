@@ -3,6 +3,4 @@ export type IconProps = {
   height?: number;
   fillPath?: string;
   align?: 'top' | 'middle' | 'bottom';
-  stroke?: string;
-  fill?: string;
 }
