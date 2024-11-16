@@ -4,8 +4,21 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
+  const environment = import.meta.env.VITE_APP_ENV
   const [count, setCount] = useState(0);
-
+  switch (environment) {
+    case 'dev':
+      document.title = 'Edudisha-Dev';
+      break;
+    case 'stage':
+      document.title = 'Edudisha-Stage';
+      break;
+    case 'production':
+      document.title = 'Edudisha';
+      break;
+    default:
+      document.title = 'Edudisha';
+  }
   return (
     <>
       <div>
