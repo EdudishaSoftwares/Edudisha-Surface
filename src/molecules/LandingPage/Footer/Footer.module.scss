@@ -1,0 +1,25 @@
+@import "../../../styles/marginPaddingSizing";
+@import "../../../styles/borderRadiusSizing";
+@import "../../../styles/borderWidthSizing";
+
+.footer-vertical-divider {
+  height: 18px;
+  width: 2px;
+}
+
+.footer-horizontal-divider {
+  margin: marginPaddingSizing(xl) 0;
+  width: 120vw;
+  margin-left: -20vw;
+}
+
+.footer-download-app-cover {
+  padding: marginPaddingSizing(xs) marginPaddingSizing(md);
+  border: borderWidthSizing(xs) solid var(--black);
+  border-radius: borderRadiusSizing(xl);
+  font-size: 12px;
+}
+
+.footer-legal-cover {
+  font-size: 12px;
+}

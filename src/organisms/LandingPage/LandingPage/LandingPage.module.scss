@@ -1,0 +1,11 @@
+@import "../../../styles/borderWidthSizing";
+@import "../../../styles/borderRadiusSizing";
+
+.landing-page {
+  overflow: hidden;
+}
+
+.landing-image {
+  border: borderWidthSizing(xs) solid var(--grey);
+  border-radius: borderRadiusSizing(xl);
+}

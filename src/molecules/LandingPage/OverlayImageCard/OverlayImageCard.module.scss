@@ -1,0 +1,65 @@
+@import "../../../styles/marginPaddingSizing";
+
+.overlay-row {
+  position: relative;
+  left: marginPaddingSizing("xl");
+  padding-top: marginPaddingSizing("sm");
+  padding-bottom: marginPaddingSizing("sm");
+  padding-right: marginPaddingSizing("sm");
+}
+
+.overlay-row-reverse {
+  position: relative;
+  right: marginPaddingSizing("xl");
+  padding-top: marginPaddingSizing("sm");
+  padding-bottom: marginPaddingSizing("sm");
+  padding-right: marginPaddingSizing("sm");
+}
+
+.gradient-orange {
+  background-image: linear-gradient(30deg, var(--orange) 0%, var(--pink) 100%);
+}
+
+.gradient-blue {
+  background-image: linear-gradient(
+    30deg,
+    var(--blue-2) 0%,
+    var(--blue-3) 100%
+  );
+}
+
+.gradient-indigo {
+  background-image: linear-gradient(
+    30deg,
+    var(--indigo) 0%,
+    var(--purple) 100%
+  );
+}
+
+.shadow-row-orange {
+  box-shadow: 4px 0px 10px var(--orange-0);
+}
+
+.shadow-row-reverse-orange {
+  box-shadow: -4px 0px 10px var(--orange-0);
+}
+
+.shadow-row-blue {
+  box-shadow: 4px 0px 10px var(--blue-0);
+}
+
+.shadow-row-reverse-blue {
+  box-shadow: -4px 0px 10px var(--blue-0);
+}
+
+.shadow-row-indigo {
+  box-shadow: 4px 0px 10px var(--indigo-0);
+}
+
+.shadow-row-reverse-indigo {
+  box-shadow: -4px 0px 10px var(--indigo-0);
+}
+
+.no-image-padding {
+  padding: 0px;
+}

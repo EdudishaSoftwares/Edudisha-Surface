@@ -1,0 +1,8 @@
+@import "../../../styles/borderRadiusSizing";
+@import "../../../styles/marginPaddingSizing";
+
+.accordion {
+  border-radius: borderRadiusSizing(xl);
+  margin-top: marginPaddingSizing(xl);
+  width: 98%;
+}

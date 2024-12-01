@@ -1,0 +1,43 @@
+@import "../../../styles/marginPaddingSizing";
+@import "../../../styles/borderRadiusSizing";
+@import "../../../styles/borderWidthSizing";
+
+.pricing-card {
+  border: borderWidthSizing(xs) solid var(--grey-1);
+  border-radius: borderRadiusSizing(xl);
+}
+
+.pricing-card-title {
+  background-color: var(--green-2);
+  border-top-left-radius: borderRadiusSizing(xl);
+  border-top-right-radius: borderRadiusSizing(xl);
+  padding: marginPaddingSizing(sm) 0;
+  margin-bottom: marginPaddingSizing(xxl);
+}
+
+.pricing-card-heading {
+  text-align: center;
+}
+
+.pricing-card-features {
+  padding: 0 marginPaddingSizing(xxl) marginPaddingSizing(xl)
+    marginPaddingSizing(xxl);
+}
+
+.pricing-card-offer {
+  margin-top: -1 * marginPaddingSizing(xxl);
+}
+
+.pricing-card-button {
+  padding: marginPaddingSizing(md) marginPaddingSizing(xxl);
+  border-radius: borderRadiusSizing(md);
+  // background-color: var(--green-2);
+  &:hover {
+    background-color: var(--green-2);
+    scale: 1.01;
+  }
+  &:hover::before {
+    background-color: var(--green);
+    scale: 1.01;
+  }
+}

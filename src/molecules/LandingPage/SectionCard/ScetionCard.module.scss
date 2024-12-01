@@ -1,0 +1,48 @@
+@import "../../../styles/marginPaddingSizing";
+@import "../../../styles/borderRadiusSizing";
+@import "../../../styles/borderWidthSizing";
+@import "../../../styles/common";
+
+.high-margin {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.section-card-label {
+  margin-bottom: marginPaddingSizing(lg);
+  padding: marginPaddingSizing(sm) marginPaddingSizing(lg);
+  border-radius: borderRadiusSizing(xxl);
+  background-color: var(--grey-3);
+  color: var(--black-1);
+}
+
+.section-card-title {
+  margin-bottom: marginPaddingSizing(lg);
+}
+
+.section-card-button {
+  padding: marginPaddingSizing(md) marginPaddingSizing(xxl);
+  border-radius: borderRadiusSizing(md);
+  background-color: var(--grey-4);
+
+  &:hover {
+    background-color: var(--grey-5);
+    scale: 1.01;
+  }
+}
+
+.buttonGradient {
+  color: white;
+  background: rgb(255, 255, 255);
+  background-image: linear-gradient(
+    90deg,
+    var(--blue-1) 0%,
+    var(--indigo) 50%,
+    var(--purple) 100%
+  );
+  color: var(--white);
+  transition: background-image 2s;
+  &:hover {
+    scale: 1.02;
+  }
+}
