@@ -6,8 +6,12 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "start_stage": "env-cmd -f .env.stage npm run start",
+    "dev": "env-cmd -f .env.dev npm run start",
+    "build_dev": "env-cmd -f .env.dev npm run build",
+    "stage": "env-cmd -f .env.stage npm run start",
     "build_stage": "env-cmd -f .env.stage npm run build",
+    "prod": "env-cmd -f .env.prod npm run start",
+    "build_prod": "env-cmd -f .env.prod npm run build",
     "lint-check": "npx eslint src/. --max-warnings=0",
     "prettify-check": "npx prettier --check src/",
     "prettify": "npx prettier --write --ignore-unknown --cache --cache-location=node_modules/.cache/alfred_prettier_cached_file src/",
