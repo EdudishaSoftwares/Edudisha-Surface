@@ -13,25 +13,15 @@ import SubmissionCelebrateIcon from "../../../atoms/Icons/SubmissionCelebrate";
 import style from "./BookDemoFrom.module.scss";
 import classNames from "classnames/bind";
 import { BookFreeDemoFormComponentProps } from "./types";
+import {
+  BookDemoRequestPayloadType,
+  BookDemoRequestResponseType,
+} from "../../../typings/bookDemoReqest.types";
+import { bookDemoRequest } from "../../../services/LandingPage/bookDemoRequest";
 
 const cx = classNames.bind(style);
 
-type FreeDemoRequestPayloadType = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  date: Date;
-  message: string;
-};
-
 const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
-  const submitFreeDemoRequest = (
-    freeDemoRequestPayload: FreeDemoRequestPayloadType
-  ) => {
-    return freeDemoRequestPayload
-      ? { ok: true, errorMessage: "" }
-      : { ok: false, errorMessage: "Some thing went wrong" };
-  };
   const { setBookFreeDemoModal, ...rest } = props;
 
   const [firstName, setFirstName] = useState("");
@@ -61,7 +51,7 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
     } else if (!date) {
       setFailureMessage("Please select valid date time");
     } else {
-      const freeDemoRequestPayload = {
+      const bookDemoRequestPayload: BookDemoRequestPayloadType = {
         firstName: firstName,
         lastName: lastName,
         email: email,
@@ -69,11 +59,13 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
         message: message,
       };
 
-      const res = await submitFreeDemoRequest(freeDemoRequestPayload);
+      const res: BookDemoRequestResponseType = await bookDemoRequest(
+        bookDemoRequestPayload
+      );
 
       if (res.ok) {
         setSuccess(true);
-      } else {
+      } else if (res.errorMessage) {
         setFailureMessage(res.errorMessage);
       }
     }
@@ -212,7 +204,7 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
               onClick={handleSubmit}
             >
               <Text weight="bold" color="blue-1">
-                Submit
+                Loading
               </Text>
             </Button>
           ) : (

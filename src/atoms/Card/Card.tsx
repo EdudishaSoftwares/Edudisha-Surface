@@ -14,6 +14,7 @@ const Card = (props: CardProps) => {
     pl,
     pb,
     pr,
+    as: Component = "div",
     borderRadius,
     children,
     className,
@@ -21,7 +22,7 @@ const Card = (props: CardProps) => {
   } = props;
 
   return (
-    <div
+    <Component
       className={cx(
         `${mt ? `mt-${mt}` : ""}`,
         `${ml ? `ml-${ml}` : ""}`,
@@ -37,7 +38,7 @@ const Card = (props: CardProps) => {
       {...rest}
     >
       {children}
-    </div>
+    </Component>
   );
 };
 

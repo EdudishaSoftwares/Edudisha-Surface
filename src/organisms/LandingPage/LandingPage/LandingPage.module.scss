@@ -5,6 +5,10 @@
   overflow: hidden;
 }
 
+#landing-page {
+  scroll-behavior: smooth;
+}
+
 .landing-image {
   border: borderWidthSizing(xs) solid var(--grey);
   border-radius: borderRadiusSizing(xl);

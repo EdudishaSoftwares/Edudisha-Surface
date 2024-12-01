@@ -20,7 +20,9 @@ const ScetionCard = (props: ScetionCardProps) => {
     description,
     noBoldDescription,
     descriptionSize = "md",
+    id,
     link,
+    linkTo,
     button,
     buttonGradient = false,
     buttonAsideText1,
@@ -30,10 +32,13 @@ const ScetionCard = (props: ScetionCardProps) => {
     highMargin,
     detailsChild,
     children,
+    onLinkClick,
+    onButtonClick,
     ...rest
   } = props;
   return (
     <FlexboxGrid
+      id={id}
       direction={direction}
       {...rest}
       className={cx(`${highMargin ? "high-margin" : ""}`)}
@@ -94,8 +99,8 @@ const ScetionCard = (props: ScetionCardProps) => {
               }
             >
               {description}{" "}
-              {link ? (
-                <Link to="#" relative="full">
+              {link && linkTo ? (
+                <Link to={linkTo} onClick={onLinkClick} relative="full">
                   <Text
                     as="span"
                     size={descriptionSize}
@@ -105,6 +110,21 @@ const ScetionCard = (props: ScetionCardProps) => {
                     {link}
                   </Text>
                 </Link>
+              ) : link && onLinkClick ? (
+                <Card
+                  as="span"
+                  onClick={onLinkClick}
+                  className={cx("link-card")}
+                >
+                  <Text
+                    as="span"
+                    size={descriptionSize}
+                    weight="semibold"
+                    color="blue"
+                  >
+                    {link}
+                  </Text>
+                </Card>
               ) : (
                 <></>
               )}
@@ -115,6 +135,7 @@ const ScetionCard = (props: ScetionCardProps) => {
           {button ? (
             <FlexboxGrid mt="xxl" direction="row" align="center">
               <Button
+                onClick={onButtonClick}
                 size="lg"
                 backgroundColor="grey-4"
                 className={cx(

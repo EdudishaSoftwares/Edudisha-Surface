@@ -69,22 +69,30 @@ const Navbar = (props: NavbarComponentType) => {
             pt="sm"
             pb="sm"
           >
-            <Button appearance="subtle" className={cx("nav-button")}>
+            <Button appearance="link" href="#home" className={cx("nav-button")}>
               <Text size="lg" weight="medium">
                 Home
               </Text>
             </Button>
-            <Button appearance="subtle" className={cx("nav-button")}>
+            <Button
+              appearance="link"
+              href="#services"
+              className={cx("nav-button")}
+            >
               <Text size="lg" weight="medium">
                 Services
               </Text>
             </Button>
-            <Button appearance="subtle" className={cx("nav-button")}>
+            <Button
+              appearance="link"
+              href="#pricing"
+              className={cx("nav-button")}
+            >
               <Text size="lg" weight="medium">
                 Pricing
               </Text>
             </Button>
-            <Button appearance="subtle" className={cx("nav-button")}>
+            <Button appearance="link" href="#faqs" className={cx("nav-button")}>
               <Text size="lg" weight="medium">
                 FAQs
               </Text>

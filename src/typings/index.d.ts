@@ -1,3 +1,9 @@
+export interface WithAsProps<
+  As extends React.ElementType | string = React.ElementType
+> extends StandardProps {
+  as?: As;
+}
+
 export type Colors =
   | "violet"
   | "purple"

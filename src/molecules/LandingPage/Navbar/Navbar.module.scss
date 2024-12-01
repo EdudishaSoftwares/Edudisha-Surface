@@ -22,6 +22,7 @@
   border-radius: borderRadiusSizing("md");
   &:hover {
     background-color: var(--grey-2);
+    text-decoration: none;
   }
 }
 

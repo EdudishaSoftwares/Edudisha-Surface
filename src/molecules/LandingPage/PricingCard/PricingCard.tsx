@@ -7,12 +7,20 @@ import RightTick from "../../../atoms/Icons/RightTick";
 import ArrowLeftIcon from "../../../atoms/Icons/ArrowLeft";
 import style from "./PricingCard.module.scss";
 import classNames from "classnames/bind";
+import { PricingCardProps } from "./types";
 
 const cx = classNames.bind(style);
 
-const PricingCard = () => {
+const PricingCard = (props: PricingCardProps) => {
+  const { onButtonClick, ...rest } = props;
+
   return (
-    <FlexboxGrid direction="column" className={cx("pricing-card")} mt="xxl">
+    <FlexboxGrid
+      direction="column"
+      className={cx("pricing-card")}
+      mt="xxl"
+      {...rest}
+    >
       <FlexboxGrid.Item colspan={24}>
         <Card className={cx("pricing-card-title")}>
           <Heading
@@ -61,6 +69,7 @@ const PricingCard = () => {
               size="lg"
               className={cx("pricing-card-button")}
               backgroundColor="green-2"
+              onClick={onButtonClick}
             >
               <Text size="xl" weight="extrabold" color="white">
                 Get Started <ArrowLeftIcon align="middle" fill="white" />

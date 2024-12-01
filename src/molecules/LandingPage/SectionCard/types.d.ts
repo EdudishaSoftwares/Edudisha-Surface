@@ -17,7 +17,9 @@ export type ScetionCardProps = MarginProps &
     title?: string;
     titleLevel?: ScetionCardTitleLevelType;
     description?: string;
+    id?: string;
     link?: string;
+    linkTo?: string;
     descriptionSize?: ScetionCardDescriptionSizeType;
     noBoldDescription?: boolean;
     button?: string;
@@ -29,4 +31,6 @@ export type ScetionCardProps = MarginProps &
     direction?: ScetionCardPropsDirectionType;
     detailsChild?: React.ReactNode;
     children?: React.ReactNode;
+    onLinkClick?: () => void;
+    onButtonClick?: () => void;
   };

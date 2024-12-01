@@ -16,6 +16,11 @@ const cx = classNames.bind(style);
 const LandingPage = () => {
   const [bookFreeDemoModal, setBookFreeDemoModal] = useState(false);
 
+  const toggleModal = () => {
+    console.log("handleBookFreeDemoLinkClicked", bookFreeDemoModal);
+    setBookFreeDemoModal(true);
+  };
+
   const imageUrl =
     "https://images.ctfassets.net/w8fc6tgspyjz/3cwY5YWcnQW63883rncd4h/36b49e6b6c7facf694ed4ad75bd84eb8/whiteboard_brainstorm.png?fm=avif&q=50&w=800";
 
@@ -24,6 +29,7 @@ const LandingPage = () => {
       justify="space-between"
       direction="column"
       mt="xxl"
+      id="landing-page"
       className={cx("landing-page")}
     >
       <FlexboxGrid.Item colspan={18}>
@@ -33,6 +39,7 @@ const LandingPage = () => {
           setBookFreeDemoModal={setBookFreeDemoModal}
         />
         <ScetionCard
+          id="home"
           mt="xxl"
           direction="row-reverse"
           titleLevel={1}
@@ -45,6 +52,7 @@ const LandingPage = () => {
           gutter="xs"
           buttonGradient
           highMargin
+          onButtonClick={toggleModal}
         >
           <Image
             src={imageUrl}
@@ -54,6 +62,7 @@ const LandingPage = () => {
           />
         </ScetionCard>
         <ScetionCard
+          id="services"
           mt="xxl"
           direction="row"
           label="Attendance Tracking"
@@ -62,6 +71,7 @@ const LandingPage = () => {
           button="Get Started"
           gutter="xs"
           highMargin
+          onButtonClick={toggleModal}
         >
           <OverlayImageCard
             imageUrl={imageUrl}
@@ -79,6 +89,7 @@ const LandingPage = () => {
           button="Get Started"
           gutter="xs"
           highMargin
+          onButtonClick={toggleModal}
         >
           <OverlayImageCard
             imageUrl={imageUrl}
@@ -96,6 +107,7 @@ const LandingPage = () => {
           button="Get Started"
           gutter="xs"
           highMargin
+          onButtonClick={toggleModal}
         >
           <OverlayImageCard
             imageUrl={imageUrl}
@@ -105,6 +117,7 @@ const LandingPage = () => {
           />
         </ScetionCard>
         <ScetionCard
+          id="pricing"
           mt="xxl"
           direction="column-reverse"
           label="Pricing Models"
@@ -113,15 +126,17 @@ const LandingPage = () => {
           gutter="xs"
           highMargin
         >
-          <PricingCard />
+          <PricingCard onButtonClick={toggleModal} />
         </ScetionCard>
         <ScetionCard
+          id="faqs"
           mt="xxl"
           direction="column-reverse"
           label="Questions & Answers"
           title="Frequently Asked Questions"
           description="Quick answers to questions you may have. Can’t find what you are looking for?"
           link="Book Free Demo"
+          onLinkClick={toggleModal}
           gutter="xs"
           highMargin
         >
