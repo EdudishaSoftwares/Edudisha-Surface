@@ -1,0 +1,13 @@
+@import "../../../styles/marginPaddingSizing";
+@import "../../../styles/borderRadiusSizing";
+
+.modal-close-button {
+  background-color: var(--white);
+  &:hover {
+    background-color: var(--grey-3);
+  }
+}
+
+.book-free-demo {
+  margin: marginPaddingSizing(xxl);
+}
