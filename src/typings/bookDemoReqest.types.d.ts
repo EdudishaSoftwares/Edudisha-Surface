@@ -1,12 +1,11 @@
 export type BookDemoRequestPayloadType = {
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   email: string;
-  date: Date;
+  preffered_date: Date;
   message: string;
 };
 
 export type BookDemoRequestResponseType = {
-  ok: boolean;
-  errorMessage?: string;
+  message?: string;
 };

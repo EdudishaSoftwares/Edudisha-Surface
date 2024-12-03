@@ -52,10 +52,10 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
       setFailureMessage("Please select valid date time");
     } else {
       const bookDemoRequestPayload: BookDemoRequestPayloadType = {
-        firstName: firstName,
-        lastName: lastName,
+        first_name: firstName,
+        last_name: lastName,
         email: email,
-        date: date,
+        preffered_date: date,
         message: message,
       };
 
@@ -63,10 +63,10 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
         bookDemoRequestPayload
       );
 
-      if (res.ok) {
+      if (res.message == "Success") {
         setSuccess(true);
-      } else if (res.errorMessage) {
-        setFailureMessage(res.errorMessage);
+      } else {
+        setFailureMessage("Something Went Wrong");
       }
     }
 
@@ -85,23 +85,36 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
       {...rest}
     >
       <Heading>Get in Touch</Heading>
-      <Text mt="sm" mb={failureMessage ? "sm" : "xxl"} color="grey-6" size="sm">
+      <Text
+        mt="sm"
+        mb={failureMessage || success ? "sm" : "xxl"}
+        color="grey-6"
+        size="sm"
+      >
         You can reach us anytime
       </Text>
 
       {success ? (
         <>
-          <FlexboxGrid
-            className={cx("book-free-demo-success")}
-            justify="center"
-            mb="xxl"
-          >
-            <SubmissionCelebrateIcon height={220} width={220} />
+          <FlexboxGrid className={cx("full-width")} justify="center" mb="lg">
+            <SubmissionCelebrateIcon height={210} width={210} />
           </FlexboxGrid>
-          <Button
+          <Heading level={4} className={cx("margin-auto")}>
+            Success
+          </Heading>
+          <Text
+            size="sm"
+            mt="sm"
             mb="xl"
+            align="center"
+            className={cx("full-width")}
+          >
+            Our team will contact you soon!
+          </Text>
+          <Button
+            mb="md"
             backgroundColor="white"
-            className={cx("book-free-demo-close-button")}
+            className={cx("book-free-demo-close-button", "full-width")}
             onClick={handleClose}
           >
             <Text weight="bold" color="black">
@@ -118,7 +131,7 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
               color="red"
               size="sm"
               align="center"
-              className={cx("book-free-demo-failure-message")}
+              className={cx("full-width")}
             >
               {failureMessage}
             </Text>
@@ -185,7 +198,7 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
             <Button
               mb="xl"
               backgroundColor="blue-1"
-              className={cx("book-free-demo-submit-button")}
+              className={cx("book-free-demo-submit-button", "full-width")}
               onClick={handleSubmit}
             >
               <Text weight="bold" color="white">
@@ -193,22 +206,17 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
               </Text>
             </Button>
           ) : (
-            <></>
-          )}
-          {loaing ? (
             <Button
               loading
               mb="xl"
               backgroundColor="blue-1"
-              className={cx("book-free-demo-submit-button")}
+              className={cx("book-free-demo-submit-button", "full-width")}
               onClick={handleSubmit}
             >
               <Text weight="bold" color="blue-1">
                 Loading
               </Text>
             </Button>
-          ) : (
-            <></>
           )}
           <Text size="sm" color="grey-6" align="center">
             By contacting us, you agree to our{" "}

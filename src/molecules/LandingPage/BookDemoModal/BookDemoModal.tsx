@@ -2,6 +2,8 @@ import FlexboxGrid from "../../../atoms/FlexboxGrid";
 import Modal from "../../../atoms/Modal";
 import BookDemoForm from "../../../organisms/LandingPage/BookDemoForm";
 import ScetionCard from "../SectionCard";
+import Image from "../../../atoms/Image";
+import Heading from "../../../atoms/Heading";
 import Text from "../../../atoms/Text";
 import MailIcon from "../../../atoms/Icons/Mail";
 import CallIcon from "../../../atoms/Icons/Call";
@@ -64,6 +66,8 @@ const BookDemoModal = (props: BookDemoModalComponentProps) => {
     setBookFreeDemoModal(false);
   };
 
+  const logoUrl = "https://cdn-icons-png.flaticon.com/512/308/308963.png";
+
   const { open, setBookFreeDemoModal, ...rest } = props;
   return (
     <Modal
@@ -73,14 +77,46 @@ const BookDemoModal = (props: BookDemoModalComponentProps) => {
       {...rest}
     >
       <FlexboxGrid direction="column" align="end">
-        <Card>
-          <Button
-            onClick={handleBookFreeDemoModalClose}
-            className={cx("modal-close-button")}
-          >
-            <CrossIcon height={18} width={18} fill="grey-6" stroke="grey-6" />
-          </Button>
-        </Card>
+        <FlexboxGrid.Item colspan={24}>
+          <FlexboxGrid align="start">
+            <FlexboxGrid direction="column" align="start" mt="sm" ml="md">
+              <FlexboxGrid>
+                <FlexboxGrid.Item>
+                  <Image
+                    src={logoUrl}
+                    alt="SchoolUp_Logo"
+                    height="24px"
+                    mr="md"
+                  />
+                </FlexboxGrid.Item>
+                <FlexboxGrid.Item>
+                  <Heading level={4} weight="extrabold">
+                    SchoolUP
+                  </Heading>
+                </FlexboxGrid.Item>
+              </FlexboxGrid>
+              <FlexboxGrid.Item>
+                <Text size="xs" weight="medium" mr="sm">
+                  The everything app for school.
+                </Text>
+              </FlexboxGrid.Item>
+            </FlexboxGrid>
+
+            <Card>
+              <Button
+                onClick={handleBookFreeDemoModalClose}
+                className={cx("modal-close-button")}
+              >
+                <CrossIcon
+                  height={18}
+                  width={18}
+                  fill="grey-6"
+                  stroke="grey-6"
+                />
+              </Button>
+            </Card>
+          </FlexboxGrid>
+        </FlexboxGrid.Item>
         <ScetionCard
           direction="row-reverse"
           label="Book Free Demo"
