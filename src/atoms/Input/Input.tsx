@@ -15,12 +15,30 @@ const InputComponent = (props: InputComponentProps) => {
     ml,
     mb,
     mr,
+    type,
     setInput,
     label,
     labelSize,
     labelColor,
     ...rest
   } = props;
+
+  console.log("input type number", type == "number");
+
+  const handleOnChange = (value: string) => {
+    if (type === "number") {
+      console.log("type number", value);
+      if (value.length === 0 || /^\d+$/.test(value)) {
+        console.log("seting number", value);
+        setInput(value);
+      }
+      return;
+    } else {
+      setInput(value);
+    }
+    return;
+  };
+
   return (
     <FlexboxGrid direction="column" align="start" className={cx("input-cover")}>
       {label ? (
@@ -31,6 +49,7 @@ const InputComponent = (props: InputComponentProps) => {
         <></>
       )}
       <Input
+        type={type === "number" ? "text" : type}
         {...rest}
         className={cx(
           `${mt ? `mt-${mt}` : ""}`,
@@ -39,7 +58,7 @@ const InputComponent = (props: InputComponentProps) => {
           `${mr ? `mr-${mr}` : ""}`,
           className
         )}
-        onChange={setInput}
+        onChange={handleOnChange}
       >
         {children}
       </Input>
@@ -48,5 +67,3 @@ const InputComponent = (props: InputComponentProps) => {
 };
 
 export default InputComponent;
-
-// Add InputGroup and InputGroup.Addon

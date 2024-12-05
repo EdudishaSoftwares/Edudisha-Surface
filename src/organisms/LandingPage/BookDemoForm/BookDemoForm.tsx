@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Button from "../../../atoms/Button";
-import DatePicker from "../../../atoms/DatePicker";
 import FlexboxGrid from "../../../atoms/FlexboxGrid";
 import Heading from "../../../atoms/Heading";
-import CalendarIcon from "../../../atoms/Icons/Calendar";
+import CallIcon from "../../../atoms/Icons/Call";
 import MailIcon from "../../../atoms/Icons/Mail";
 import Input from "../../../atoms/Input";
 import InputGroup from "../../../atoms/InputGroup";
@@ -27,7 +26,7 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [date, setDate] = useState();
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
 
   const [loaing, setLoading] = useState(false);
@@ -40,6 +39,11 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
     return emailRegex.test(email);
   };
 
+  const validatePhoneNumber = (email: string) => {
+    const phoneNumberRegex = /^[6-9]\d{9}$/;
+    return phoneNumberRegex.test(email);
+  };
+
   const handleSubmit = async () => {
     setLoading(true);
     if (firstName.length < 2) {
@@ -48,14 +52,14 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
       setFailureMessage("Please enter valid last name");
     } else if (!validateEmail(email)) {
       setFailureMessage("Please enter valid email");
-    } else if (!date) {
+    } else if (!validatePhoneNumber(phoneNumber)) {
       setFailureMessage("Please select valid date time");
     } else {
       const bookDemoRequestPayload: BookDemoRequestPayloadType = {
         first_name: firstName,
         last_name: lastName,
         email: email,
-        preffered_date: date,
+        phone_number: phoneNumber,
         message: message,
       };
 
@@ -174,16 +178,30 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
               </FlexboxGrid.Item>
             </FlexboxGrid>
           </InputGroup>
-          <InputGroup mb="xl" className={cx("book-free-demo-input-group")}>
+          <InputGroup
+            mb="xl"
+            className={cx("book-free-demo-input-group", "full-width")}
+          >
             <FlexboxGrid>
-              <CalendarIcon fill="grey-6" stroke="grey-6" />
-              <DatePicker
-                value={date ? date : undefined}
-                setDate={setDate}
-                placeholder="Select date & time"
-                format="MM/dd/yyyy HH:mm"
-                noCalanderIcon
-              />
+              <FlexboxGrid.Item>
+                <Text mt="md">
+                  <CallIcon
+                    width={18}
+                    height={18}
+                    fill="grey-6"
+                    stroke="grey-6"
+                  />
+                </Text>
+              </FlexboxGrid.Item>
+              <FlexboxGrid.Item>
+                <Input
+                  required
+                  setInput={setPhoneNumber}
+                  type="number"
+                  value={phoneNumber}
+                  placeholder="Phone Number"
+                />
+              </FlexboxGrid.Item>
             </FlexboxGrid>
           </InputGroup>
           <Input
