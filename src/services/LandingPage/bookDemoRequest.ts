@@ -7,14 +7,17 @@ import {
 export const bookDemoRequest = async (
   payload: BookDemoRequestPayloadType
 ): Promise<BookDemoRequestResponseType> => {
-  // let response = await fetch("book demo request api url",{
+  // const response = await fetch("http://localhost:3004/pramaan/api/v1/platform/demo-request/booking",{
   //     method : 'POST',
   //     headers : {'Content-Type':'application/json'},
   //     body : JSON.stringify(payload)
   // });
-  // response = await JSON.parse(response);
-  // return response;
+  // const jsonResponse = await response.json()
+  // if (jsonResponse.message) {
+  //   return jsonResponse;
+  // }
+  // return {message: "Failure"}
 
   console.log(payload);
-  return { ok: true, errorMessage: undefined };
+  return { message: "Success" };
 };

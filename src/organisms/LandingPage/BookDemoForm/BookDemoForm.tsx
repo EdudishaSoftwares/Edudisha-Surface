@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Button from "../../../atoms/Button";
-import DatePicker from "../../../atoms/DatePicker";
 import FlexboxGrid from "../../../atoms/FlexboxGrid";
 import Heading from "../../../atoms/Heading";
-import CalendarIcon from "../../../atoms/Icons/Calendar";
+import CallIcon from "../../../atoms/Icons/Call";
 import MailIcon from "../../../atoms/Icons/Mail";
 import Input from "../../../atoms/Input";
 import InputGroup from "../../../atoms/InputGroup";
@@ -27,7 +26,7 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [date, setDate] = useState();
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
 
   const [loaing, setLoading] = useState(false);
@@ -40,6 +39,11 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
     return emailRegex.test(email);
   };
 
+  const validatePhoneNumber = (email: string) => {
+    const phoneNumberRegex = /^[6-9]\d{9}$/;
+    return phoneNumberRegex.test(email);
+  };
+
   const handleSubmit = async () => {
     setLoading(true);
     if (firstName.length < 2) {
@@ -48,14 +52,14 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
       setFailureMessage("Please enter valid last name");
     } else if (!validateEmail(email)) {
       setFailureMessage("Please enter valid email");
-    } else if (!date) {
+    } else if (!validatePhoneNumber(phoneNumber)) {
       setFailureMessage("Please select valid date time");
     } else {
       const bookDemoRequestPayload: BookDemoRequestPayloadType = {
-        firstName: firstName,
-        lastName: lastName,
+        first_name: firstName,
+        last_name: lastName,
         email: email,
-        date: date,
+        phone_number: phoneNumber,
         message: message,
       };
 
@@ -63,10 +67,10 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
         bookDemoRequestPayload
       );
 
-      if (res.ok) {
+      if (res.message == "Success") {
         setSuccess(true);
-      } else if (res.errorMessage) {
-        setFailureMessage(res.errorMessage);
+      } else {
+        setFailureMessage("Something Went Wrong");
       }
     }
 
@@ -85,23 +89,36 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
       {...rest}
     >
       <Heading>Get in Touch</Heading>
-      <Text mt="sm" mb={failureMessage ? "sm" : "xxl"} color="grey-6" size="sm">
+      <Text
+        mt="sm"
+        mb={failureMessage || success ? "sm" : "xxl"}
+        color="grey-6"
+        size="sm"
+      >
         You can reach us anytime
       </Text>
 
       {success ? (
         <>
-          <FlexboxGrid
-            className={cx("book-free-demo-success")}
-            justify="center"
-            mb="xxl"
-          >
-            <SubmissionCelebrateIcon height={220} width={220} />
+          <FlexboxGrid className={cx("full-width")} justify="center" mb="lg">
+            <SubmissionCelebrateIcon height={210} width={210} />
           </FlexboxGrid>
-          <Button
+          <Heading level={4} className={cx("margin-auto")}>
+            Success
+          </Heading>
+          <Text
+            size="sm"
+            mt="sm"
             mb="xl"
+            align="center"
+            className={cx("full-width")}
+          >
+            Our team will contact you soon!
+          </Text>
+          <Button
+            mb="md"
             backgroundColor="white"
-            className={cx("book-free-demo-close-button")}
+            className={cx("book-free-demo-close-button", "full-width")}
             onClick={handleClose}
           >
             <Text weight="bold" color="black">
@@ -118,7 +135,7 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
               color="red"
               size="sm"
               align="center"
-              className={cx("book-free-demo-failure-message")}
+              className={cx("full-width")}
             >
               {failureMessage}
             </Text>
@@ -161,16 +178,30 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
               </FlexboxGrid.Item>
             </FlexboxGrid>
           </InputGroup>
-          <InputGroup mb="xl" className={cx("book-free-demo-input-group")}>
+          <InputGroup
+            mb="xl"
+            className={cx("book-free-demo-input-group", "full-width")}
+          >
             <FlexboxGrid>
-              <CalendarIcon fill="grey-6" stroke="grey-6" />
-              <DatePicker
-                value={date ? date : undefined}
-                setDate={setDate}
-                placeholder="Select date & time"
-                format="MM/dd/yyyy HH:mm"
-                noCalanderIcon
-              />
+              <FlexboxGrid.Item>
+                <Text mt="md">
+                  <CallIcon
+                    width={18}
+                    height={18}
+                    fill="grey-6"
+                    stroke="grey-6"
+                  />
+                </Text>
+              </FlexboxGrid.Item>
+              <FlexboxGrid.Item>
+                <Input
+                  required
+                  setInput={setPhoneNumber}
+                  type="number"
+                  value={phoneNumber}
+                  placeholder="Phone Number"
+                />
+              </FlexboxGrid.Item>
             </FlexboxGrid>
           </InputGroup>
           <Input
@@ -185,7 +216,7 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
             <Button
               mb="xl"
               backgroundColor="blue-1"
-              className={cx("book-free-demo-submit-button")}
+              className={cx("book-free-demo-submit-button", "full-width")}
               onClick={handleSubmit}
             >
               <Text weight="bold" color="white">
@@ -193,22 +224,17 @@ const BookDemoForm = (props: BookFreeDemoFormComponentProps) => {
               </Text>
             </Button>
           ) : (
-            <></>
-          )}
-          {loaing ? (
             <Button
               loading
               mb="xl"
               backgroundColor="blue-1"
-              className={cx("book-free-demo-submit-button")}
+              className={cx("book-free-demo-submit-button", "full-width")}
               onClick={handleSubmit}
             >
               <Text weight="bold" color="blue-1">
                 Loading
               </Text>
             </Button>
-          ) : (
-            <></>
           )}
           <Text size="sm" color="grey-6" align="center">
             By contacting us, you agree to our{" "}

@@ -26,7 +26,6 @@
 }
 
 .book-free-demo-submit-button {
-  width: 100%;
   border-radius: borderRadiusSizing(xxl);
   &:hover {
     background-color: var(--blue-2);
@@ -34,7 +33,6 @@
 }
 
 .book-free-demo-close-button {
-  width: 100%;
   border: borderWidthSizing(sm) solid var(--grey-1);
   border-radius: borderRadiusSizing(xxl);
   &:hover {
@@ -42,10 +40,10 @@
   }
 }
 
-.book-free-demo-failure-message {
+.full-width {
   width: 100%;
 }
 
-.book-free-demo-success {
-  width: 100%;
+.margin-auto {
+  margin: auto;
 }
