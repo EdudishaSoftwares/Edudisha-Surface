@@ -1,0 +1,15 @@
+name: Enforce Branch Naming
+on:
+  create
+
+jobs:
+  enforce-branch-naming:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch name
+        run: |
+          BRANCH_NAME="${{ github.ref }}"
+          if [[ ! "$BRANCH_NAME" =~ ^refs/heads/(feature/|bugfix/|hotfix/).+ ]]; then
+            echo "❌ Invalid branch name! Use prefixes: feature/, bugfix/, or hotfix/"
+            exit 1
+          fi
